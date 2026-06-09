@@ -1,61 +1,44 @@
 import { motion } from "framer-motion";
 import { FaCloud } from "react-icons/fa";
-
+import { useState, useEffect } from "react";
 import voip from "../assets/voip.png";
 import phone from "../assets/phone.png";
 import cloud from "../assets/cloud.png";
 
 function Overview() {
-  const services = [
-    {
-      title: "VoIP Call Management",
-      desc: "Handles enterprise voice communication and routing.",
-      img: voip,
-      color: "#D6EAF8",
-      border: "#2E86C1",
-    },
-    {
-      title: "IP Phone Processing",
-      desc: "Registers and manages IP phones across the network.",
-      img: phone,
-      color: "#E8F8F5",
-      border: "#2ECC71",
-    },
-    {
-      title: "Centralized Communication",
-      desc: "Unified control for voice services and endpoints.",
-      img: cloud,
-      color: "#FDEBD0",
-      border: "#F39C12",
-    },
-  ];
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/api/overview")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+
+  const imageMap = {
+    voip,
+    phone,
+    cloud,
+  };
 
   const container = {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: 0.18,
+        staggerChildren: 0.15,
       },
     },
   };
 
   const card = {
-    hidden: { opacity: 0, y: 60, scale: 0.95 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
 
   return (
-    <section id="overview" style={{ padding: "40px 0" }}>
-      
-      {/* HEADER */}
+    <section 
+    id="overview"
+    style={{ padding: "40px 0" }}>
+
+      {/* HEADER (same style everywhere) */}
       <div
         style={{
           display: "flex",
@@ -77,8 +60,7 @@ function Overview() {
       <motion.div
         variants={container}
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="show"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
@@ -96,26 +78,29 @@ function Overview() {
               overflow: "hidden",
               boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
               cursor: "pointer",
-              background: "#fff",
+              background: item.color,
               border: `2px solid ${item.border}`,
               transition: "0.3s",
             }}
           >
-            {/* IMAGE */}
+            {/* IMAGE WRAPPER */}
             <div style={{ position: "relative" }}>
               <img
-                src={item.img}
+                src={imageMap[item.image]}
                 alt={item.title}
                 style={{
                   width: "100%",
                   height: "160px",
                   objectFit: "contain",
-                  padding: "12px",
+                  padding: "10px",
+                  background: "white",
                   background: "#f8fafc",
+                  padding: "12px",
                   display: "block",
                 }}
               />
 
+              {/* smooth fade */}
               <div
                 style={{
                   position: "absolute",
@@ -123,8 +108,8 @@ function Overview() {
                   left: 0,
                   width: "100%",
                   height: "20px",
-                  background:
-                    "linear-gradient(to bottom, transparent, #fff)",
+                  borderRadius: "0 0 14px 14px",
+                  background: "linear-gradient(to bottom, transparent, #fff)",
                 }}
               />
             </div>

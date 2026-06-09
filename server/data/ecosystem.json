@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Cisco Jabber",
+    "color": "#E8F8F5",
+    "icon": "cloud"
+  },
+  {
+    "id": 2,
+    "title": "IP Phones",
+    "color": "#D6EAF8",
+    "icon": "phone"
+  },
+  {
+    "id": 3,
+    "title": "CUCM",
+    "subtitle": "Central Call Control",
+    "color": "#F8C8DC",
+    "icon": "server",
+    "main": true
+  },
+  {
+    "id": 4,
+    "title": "Unity Connection",
+    "color": "#FDEBD0",
+    "icon": "cloud"
+  },
+  {
+    "id": 5,
+    "title": "Expressway",
+    "color": "#D5F5E3",
+    "icon": "globe"
+  },
+  {
+    "id": 6,
+    "title": "Cisco CUBE",
+    "color": "#EDE7F6",
+    "icon": "server"
+  },
+  {
+    "id": 7,
+    "title": "PSTN",
+    "color": "#F9EBEA",
+    "icon": "globe"
+  }
+]

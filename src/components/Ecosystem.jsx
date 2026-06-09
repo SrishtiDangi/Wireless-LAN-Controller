@@ -6,8 +6,16 @@ import {
   FaCloud,
   FaGlobe,
 } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 function Ecosystem() {
+  const [ecosystem, setEcosystem] = useState([]);
+  useEffect(() => {
+  fetch("http://localhost:5000/api/ecosystem")
+    .then((res) => res.json())
+    .then((data) => setEcosystem(data))
+    .catch((err) => console.log(err));
+  }, []);
   const cardStyle = (bg) => ({
     background: bg,
     padding: "16px",
@@ -18,6 +26,12 @@ function Ecosystem() {
     fontWeight: "700",
     color: "#2C3E50",
   });
+  const iconMap = {
+    cloud: <FaCloud size={28} />,
+    phone: <FaPhoneAlt size={28} />,
+    server: <FaServer size={28} />,
+    globe: <FaGlobe size={28} />,
+};
 
   return (
     <section 
@@ -69,10 +83,14 @@ function Ecosystem() {
             whileHover={{ scale: 1.05 }}
             style={cardStyle("#E8F8F5")}
           >
-            <FaCloud size={28} />
-            <div style={{ marginTop: "8px" }}>
-              Cisco Jabber
-            </div>
+            {ecosystem[0] && (
+                <>
+                {iconMap[ecosystem[0].icon]}
+                <div style={{ marginTop: "8px" }}>
+                    {ecosystem[0].title}
+                </div>
+                </>
+            )}
           </motion.div>
 
           {/* PHONE - CUCM - UNITY */}
@@ -89,10 +107,14 @@ function Ecosystem() {
               whileHover={{ scale: 1.05 }}
               style={cardStyle("#D6EAF8")}
             >
-              <FaPhoneAlt size={28} />
-              <div style={{ marginTop: "8px" }}>
-                IP Phones
-              </div>
+              {ecosystem[1] && (
+                <>
+                {iconMap[ecosystem[1].icon]}
+                <div style={{ marginTop: "8px" }}>
+                    {ecosystem[1].title}
+                </div>
+                </>
+            )}
             </motion.div>
 
             {/* CENTER CUCM */}
@@ -154,14 +176,18 @@ function Ecosystem() {
               </p>
             </motion.div>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              style={cardStyle("#FDEBD0")}
-            >
-              <FaCloud size={28} />
-              <div style={{ marginTop: "8px" }}>
-                Unity Connection
-              </div>
+           <motion.div
+           whileHover={{ scale: 1.05 }}
+           style={cardStyle("#FDEBD0")}
+           >
+            {ecosystem[2] && (
+                <>
+                {iconMap[ecosystem[2].icon]}
+                <div style={{ marginTop: "8px" }}>
+                    {ecosystem[2].title}
+                </div>
+                </>
+            )}
             </motion.div>
           </div>
 
@@ -175,35 +201,47 @@ function Ecosystem() {
             }}
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              style={cardStyle("#D5F5E3")}
+            whileHover={{ scale: 1.05 }}
+            style={cardStyle("#D5F5E3")}
             >
-              <FaGlobe size={28} />
-              <div style={{ marginTop: "8px" }}>
-                Expressway
-              </div>
+                {ecosystem[3] && (
+                    <>
+                    {iconMap[ecosystem[3].icon]}
+                    <div style={{ marginTop: "8px" }}>
+                        {ecosystem[3].title}
+                    </div>
+                    </>
+                )}
             </motion.div>
 
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              style={cardStyle("#EDE7F6")}
+            whileHover={{ scale: 1.05 }}
+            style={cardStyle("#EDE7F6")}
             >
-              <FaServer size={28} />
-              <div style={{ marginTop: "8px" }}>
-                Cisco CUBE
-              </div>
+                {ecosystem[4] && (
+                    <>
+                    {iconMap[ecosystem[4].icon]}
+                    <div style={{ marginTop: "8px" }}>
+                        {ecosystem[4].title}
+                    </div>
+                    </>
+                )}
             </motion.div>
           </div>
 
           {/* PSTN */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            style={cardStyle("#F9EBEA")}
+          whileHover={{ scale: 1.05 }}
+          style={cardStyle("#F9EBEA")}
           >
-            <FaGlobe size={28} />
-            <div style={{ marginTop: "8px" }}>
-              PSTN
-            </div>
+            {ecosystem[5] && (
+                <>
+                {iconMap[ecosystem[5].icon]}
+                <div style={{ marginTop: "8px" }}>
+                    {ecosystem[5].title}
+                </div>
+                </>
+            )}
           </motion.div>
         </div>
       </Reveal>
