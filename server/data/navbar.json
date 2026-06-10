@@ -1,24 +1,29 @@
 {
   "brand": "CUCM Dashboard",
   "links": [
-    { "id": "home", "label": "Home", "icon": "home" },
-    { "id": "overview", "label": "Overview", "icon": "server" },
-    { "id": "ecosystem", "label": "Ecosystem" },
-    { "id": "architecture", "label": "Architecture", "icon": "network" },
-    { "id": "gateway-pstn", "label": "Gateway" },
-    { "id": "phone-registration", "label": "Registration" },
-    { "id": "call-flow", "label": "Call Flow", "icon": "phone" },
-    { "id": "dial-plan", "label": "Dial Plan" },
-    { "id": "rack-overview", "label": "Rack", "icon": "box" },
-    { "id": "cms", "label": "CMS + PBX", "icon": "cloud" },
-    { "id": "protocols", "label": "Protocols" },
-    { "id": "codecc", "label": "Codec & QoS" },
-    { "id": "media-resources", "label": "Media Resources" },
-    { "id": "security", "label": "Security" },
-    { "id": "high-availability", "label": "High Availability" },
-    { "id": "mobility", "label": "Mobility" },
-    { "id": "class-of-service", "label": "Class of Service" },
-    { "id": "troubleshooting", "label": "Troubleshooting" },
-    { "id": "advantages", "label": "Advantages", "icon": "check" }
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "home",
+      "align":"center"
+    },
+    {
+      "id": "call-flow",
+      "label": "Call Processing",
+      "icon": "phone",
+      "align":"center"
+    },
+    {
+      "id": "gateway-pstn",
+      "label": "Voice Infrastructure",
+      "icon": "network",
+      "align":"center"
+    },
+    {
+      "id": "security",
+      "label": "Enterprise Features",
+      "icon": "cloud",
+      "align":"center"
+    }
   ]
 }

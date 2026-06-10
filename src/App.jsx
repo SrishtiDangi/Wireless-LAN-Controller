@@ -26,27 +26,38 @@ function App() {
     <>
       <Navbar />
       <Hero />
+
+      {/* OVERVIEW */}
       <Overview />
       <Ecosystem />
       <Architecture />
-      <GatewayPSTN />
+      <Advantages />
+
+      {/* CALL PROCESSING */}
       <PhoneRegistration />
       <CallFlow />
       <DialPlan />
-      <RackOverview />
-      <CMS />
-      <PBXComparison />
+      <ClassOfService />
+
+      {/* VOICE INFRASTRUCTURE */}
+      <GatewayPSTN />
       <Protocols />
       <CodecQoS />
       <MediaResources />
+
+      {/* ENTERPRISE FEATURES */}
       <Security />
-      <HighAvailability />
       <Mobility />
-      <ClassOfService />
+      <HighAvailability />
       <Troubleshooting />
-      <Advantages />
+
+      {/* OPTIONAL / EXTRA */}
+      <RackOverview />
+      <CMS />
+      <PBXComparison />
+
       <Footer />
-      </>
+    </>
   );
 }
 
