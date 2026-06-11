@@ -1,0 +1,85 @@
+{
+  "title": "CUCM Diagnostic Field Guide",
+  "subtitle": "Operational Troubleshooting Flows for Unified Communications",
+
+  "flows": [
+    {
+      "title": "Endpoint Registration Failure Flow",
+      "color": "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
+      "border": "#E8B89C",
+
+      "start": "Phone Boots / Acquires Voice VLAN",
+
+      "steps": [
+        {
+          "question": "Gets DHCP Option 150?",
+          "action": "Check DHCP Scope & IP Helpers"
+        },
+        {
+          "question": "Reaches TFTP Server?",
+          "action": "Check Underlay Routing to CUCM"
+        },
+        {
+          "question": "ITL/CTL Trust Match?",
+          "action": "Delete ITL File from Device Menu"
+        },
+        {
+          "question": "MAC Address Exists in CUCM?",
+          "action": "Verify MAC Typos & Add Phone"
+        }
+      ],
+
+      "result": "Phone Registers Successfully"
+    },
+
+    {
+      "title": "One-Way or No-Way Audio Flow",
+      "color": "linear-gradient(135deg,#D6EAF8,#EEF6FC)",
+      "border": "#85C1E9",
+
+      "start": "Call Connects (SIP Signaling OK)",
+
+      "steps": [
+        {
+          "question": "Codec Match? (e.g. G.711 vs G.729)",
+          "action": "Allocate Transcoder / Check MRGL"
+        },
+        {
+          "question": "UDP Ports 16384–32767 Open?",
+          "action": "Check Network ACLs / Firewalls"
+        },
+        {
+          "question": "Asymmetric Routing?",
+          "action": "Fix VRF / Layer 3 Return Paths"
+        }
+      ],
+
+      "result": "RTP Audio Flows Point-to-Point"
+    },
+
+    {
+      "title": "Call Routing Failure (Fast Busy)",
+      "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
+      "border": "#C39BD3",
+
+      "start": "User Dials Digits",
+
+      "steps": [
+        {
+          "question": "Matches Route Pattern?",
+          "action": "Review Dial Plan / DNA Tool"
+        },
+        {
+          "question": "Partition in Caller's CSS?",
+          "action": "Golden Rule Fail – Update CSS"
+        },
+        {
+          "question": "Gateway/Trunk Available?",
+          "action": "Check SIP Trunk / PRI B-Channels"
+        }
+      ],
+
+      "result": "Call Routes Successfully"
+    }
+  ]
+}

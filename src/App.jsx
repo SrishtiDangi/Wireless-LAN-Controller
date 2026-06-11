@@ -17,13 +17,15 @@ import Ecosystem from "./components/Ecosystem";
 import GatewayPSTN from "./components/GatewayPSTN";
 import Security from "./components/Security";
 import Mobility from "./components/Mobility";
+import Over from "./components/Over";
 import MediaResources from "./components/MediaResources";
 import HighAvailability from "./components/HighAvailibilty";
-
+import DiagnosticFieldGuide from "./components/DiagnosticFieldGuide";
 function App() {
   return (
     <>
       <Navbar />
+      <Over />
 
       {/* OVERVIEW */}
       <Overview />
@@ -53,6 +55,7 @@ function App() {
       <RackOverview />
       <CMS />
       <PBXComparison />
+      <DiagnosticFieldGuide />
 
       <Footer />
     </>

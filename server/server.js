@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import fs from "fs";
-
+import diagnosticFieldGuide from "./data/diagnosticFieldGuide.json" with { type: "json" };
 import ecosystem from "./data/ecosystem.json" with { type: "json" };
 import architecture from "./data/architecture.json" with { type: "json" };
 import gateway from "./data/gateway.json" with { type: "json" };
@@ -22,6 +22,7 @@ import classOfService from "./data/classOfService.json" with {type: "json"};
 import troubleshooting from "./data/troubleshooting.json" with {type:"json"};
 import advantages from "./data/advantages.json" with {type:"json"};
 import footer from "./data/footer.json" with {type:"json"};
+import over from "./data/over.json" with {type: "json"};
 const app = express();
 
 app.use(cors());
@@ -110,3 +111,10 @@ app.get("/api/advantages", (req, res) => {
 app.get("/api/footer", (req, res) => {
   res.json(footer);
 });
+
+app.get("/api/diagnosticFieldGuide", (req, res) => {
+  res.json(diagnosticFieldGuide);
+});
+app.get("/api/over",(req,res)=>{
+    res.json(over);
+})
