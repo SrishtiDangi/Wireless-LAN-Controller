@@ -1,20 +1,38 @@
 {
-  "title": "Troubleshooting Quick Reference",
-  "issuesTitle": "Common Issues",
-  "commandsTitle": "Useful CLI Commands",
-  "issues": [
-    ["Phone shows Configuring IP", "DHCP issue", "Check DHCP + Option 150"],
-    ["Phone shows Registering", "CUCM unreachable", "Verify TFTP & CUCM"],
-    ["One-way Audio", "RTP blocked", "Check firewall / QoS"],
-    ["Call drops after 30s", "SIP NAT issue", "Inspect SIP ALG"],
-    ["Fast Busy Outbound", "Route Pattern issue", "Verify Dial Plan"],
-    ["DB Replication Broken", "Publisher sync failure", "Run dbreplication status"]
-  ],
-  "commands": [
-    ["show status", "CUCM node health"],
-    ["show version active", "Running CUCM version"],
-    ["utils service list", "List all services"],
-    ["utils dbreplication status", "Replication health"],
-    ["file tail activelog", "View real-time logs"]
+  "title": "Wireless LAN Troubleshooting",
+  "subtitle": "Common WLAN issues and recommended troubleshooting workflow.",
+  "items": [
+    {
+      "title": "Client Cannot Join WLAN",
+      "desc": "Verify SSID broadcast, WLAN status, AP availability, and client authentication process."
+    },
+    {
+      "title": "Authentication Failure",
+      "desc": "Check RADIUS reachability, AAA configuration, shared secrets, and user credentials."
+    },
+    {
+      "title": "DHCP Address Issues",
+      "desc": "Confirm DHCP scope availability, VLAN mappings, helper addresses, and IP lease assignment."
+    },
+    {
+      "title": "Poor Wireless Coverage",
+      "desc": "Review AP placement, signal strength, interference levels, and RF profiles."
+    },
+    {
+      "title": "Client Roaming Problems",
+      "desc": "Verify mobility groups, AP neighbor relationships, and fast roaming configuration."
+    },
+    {
+      "title": "High Latency or Packet Loss",
+      "desc": "Analyze channel utilization, interference sources, QoS policies, and uplink connectivity."
+    },
+    {
+      "title": "CAPWAP Join Failure",
+      "desc": "Check controller discovery, DNS resolution, DHCP Option 43, and CAPWAP connectivity."
+    },
+    {
+      "title": "Controller Reachability Issues",
+      "desc": "Verify routing paths, VLAN configuration, firewall rules, and management interfaces."
+    }
   ]
 }

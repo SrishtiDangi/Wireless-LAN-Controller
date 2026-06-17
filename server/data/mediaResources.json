@@ -1,41 +1,42 @@
 {
-  "title": "Media Resources",
-  "subtitle": "Core CUCM media services used during call processing",
+  "title": "Wireless Media Resources",
+  "subtitle": "Optimizing Voice, Video and Real-Time Applications",
+
   "items": [
     {
-      "icon": "exchange",
-      "title": "Transcoder",
-      "desc": "Converts between incompatible codecs such as G.711 and G.729.",
+      "title": "Quality of Service (QoS)",
+      "desc": "Prioritizes critical applications such as voice and video traffic.",
+      "icon": "shield",
       "color": "#D6EAF8",
-      "border": "#3498DB"
+      "border": "#85C1E9"
     },
     {
-      "icon": "users",
-      "title": "Conference Bridge",
-      "desc": "Enables multi-party audio conferencing between endpoints.",
-      "color": "#E8F8F5",
-      "border": "#2ECC71"
-    },
-    {
-      "icon": "music",
-      "title": "Music on Hold",
-      "desc": "Streams audio to callers placed on hold.",
-      "color": "#FDEBD0",
-      "border": "#F39C12"
-    },
-    {
-      "icon": "bullhorn",
-      "title": "Annunciator",
-      "desc": "Plays prerecorded system announcements and prompts.",
-      "color": "#FADBD8",
-      "border": "#E74C3C"
-    },
-    {
-      "icon": "random",
-      "title": "MTP",
-      "desc": "Media Termination Point for SIP and H.323 interoperability.",
+      "title": "Voice over Wi-Fi",
+      "desc": "Supports wireless voice communications with low latency and packet loss.",
+      "icon": "globe",
       "color": "#E8DFF5",
-      "border": "#8E44AD"
+      "border": "#C39BD3"
+    },
+    {
+      "title": "Video Optimization",
+      "desc": "Enhances streaming and conferencing performance over WLANs.",
+      "icon": "server",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "Traffic Classification",
+      "desc": "Identifies and prioritizes application traffic types automatically.",
+      "icon": "database",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "Bandwidth Management",
+      "desc": "Allocates wireless resources efficiently for real-time services.",
+      "icon": "sync",
+      "color": "#FDEBD0",
+      "border": "#D4AC0D"
     }
   ]
 }

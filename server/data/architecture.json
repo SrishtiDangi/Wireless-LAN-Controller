@@ -1,40 +1,43 @@
 {
-  "publisher": {
-    "title": "Publisher Server",
-    "desc": "Database & Configuration"
+  "title": "Wireless LAN Controller Architecture",
+  "subtitle": "Centralized wireless management architecture in enterprise networks",
+
+  "controller": {
+    "title": "Wireless LAN Controller (WLC)",
+    "desc": "Central brain of the wireless network managing Access Points, WLANs, security policies and client mobility."
   },
 
-  "infra": [
-    "MOH 1",
-    "MOH 2",
-    "TFTP 1",
-    "TFTP 2"
+  "components": [
+    "CAPWAP Control",
+    "CAPWAP Data",
+    "RF Management",
+    "Mobility Services"
   ],
 
-  "subscribers": [
+  "devices": [
     {
-      "title": "Subscriber 1",
-      "desc": "Call Processing",
+      "title": "Access Point 1",
+      "desc": "Provides wireless coverage and forwards traffic through CAPWAP.",
       "color": "#D6EAF8",
-      "border": "#2E86C1"
+      "border": "#85C1E9"
     },
     {
-      "title": "Subscriber 2",
-      "desc": "Redundancy",
-      "color": "#E8F4F8",
-      "border": "#7D3C98"
+      "title": "Access Point 2",
+      "desc": "Extends wireless coverage while centrally managed by the WLC.",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
     },
     {
-      "title": "Subscriber 3",
-      "desc": "High Availability",
+      "title": "Wireless Clients",
+      "desc": "Laptops, phones and tablets connecting through enterprise WLANs.",
       "color": "#D5F5E3",
-      "border": "#1E8449"
+      "border": "#7DCEA0"
     },
     {
-      "title": "Subscriber 4",
-      "desc": "Failover Node",
-      "color": "#FDEBD0",
-      "border": "#B9770E"
+      "title": "Mobility Group",
+      "desc": "Supports seamless roaming between access points and controllers.",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
     }
   ]
 }

@@ -1,85 +1,93 @@
 {
-  "title": "CUCM Diagnostic Field Guide",
-  "subtitle": "Operational Troubleshooting Flows for Unified Communications",
+  "title": "WLC Diagnostic Field Guide",
+  "description": "Operational Troubleshooting Flows for Wireless LAN Networks",
 
   "flows": [
     {
-      "title": "Endpoint Registration Failure Flow",
-      "color": "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
-      "border": "#E8B89C",
-
-      "start": "Phone Boots / Acquires Voice VLAN",
-
-      "steps": [
-        {
-          "question": "Gets DHCP Option 150?",
-          "action": "Check DHCP Scope & IP Helpers"
-        },
-        {
-          "question": "Reaches TFTP Server?",
-          "action": "Check Underlay Routing to CUCM"
-        },
-        {
-          "question": "ITL/CTL Trust Match?",
-          "action": "Delete ITL File from Device Menu"
-        },
-        {
-          "question": "MAC Address Exists in CUCM?",
-          "action": "Verify MAC Typos & Add Phone"
-        }
-      ],
-
-      "result": "Phone Registers Successfully"
-    },
-
-    {
-      "title": "One-Way or No-Way Audio Flow",
-      "color": "linear-gradient(135deg,#D6EAF8,#EEF6FC)",
+      "title": "AP Join Failure Flow",
+      "color": "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
       "border": "#85C1E9",
 
-      "start": "Call Connects (SIP Signaling OK)",
+      "start": "Access Point Boots",
+
+      "result": "AP Successfully Joins WLC",
 
       "steps": [
         {
-          "question": "Codec Match? (e.g. G.711 vs G.729)",
-          "action": "Allocate Transcoder / Check MRGL"
+          "question": "Gets IP Address from DHCP?",
+          "action": "Verify DHCP Scope and VLAN"
         },
         {
-          "question": "UDP Ports 16384–32767 Open?",
-          "action": "Check Network ACLs / Firewalls"
+          "question": "Discovers WLC?",
+          "action": "Check DHCP Option 43 or DNS Entry"
         },
         {
-          "question": "Asymmetric Routing?",
-          "action": "Fix VRF / Layer 3 Return Paths"
+          "question": "CAPWAP Reachable?",
+          "action": "Verify Routing and Firewall Rules"
+        },
+        {
+          "question": "Software Version Compatible?",
+          "action": "Upgrade AP or WLC Image"
         }
-      ],
-
-      "result": "RTP Audio Flows Point-to-Point"
+      ]
     },
 
     {
-      "title": "Call Routing Failure (Fast Busy)",
+      "title": "Client Authentication Failure",
       "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
       "border": "#C39BD3",
 
-      "start": "User Dials Digits",
+      "start": "Client Attempts to Join WLAN",
+
+      "result": "Client Successfully Authenticated",
 
       "steps": [
         {
-          "question": "Matches Route Pattern?",
-          "action": "Review Dial Plan / DNA Tool"
+          "question": "SSID Visible?",
+          "action": "Verify WLAN Enabled"
         },
         {
-          "question": "Partition in Caller's CSS?",
-          "action": "Golden Rule Fail – Update CSS"
+          "question": "Correct Credentials?",
+          "action": "Reset User Credentials"
         },
         {
-          "question": "Gateway/Trunk Available?",
-          "action": "Check SIP Trunk / PRI B-Channels"
+          "question": "AAA / RADIUS Reachable?",
+          "action": "Verify Radius Server Connectivity"
+        },
+        {
+          "question": "Authentication Policy Valid?",
+          "action": "Review WLAN Security Settings"
         }
-      ],
+      ]
+    },
 
-      "result": "Call Routes Successfully"
+    {
+      "title": "Poor Wireless Performance",
+      "color": "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
+      "border": "#E8B89C",
+
+      "start": "Users Report Slow Wi-Fi",
+
+      "result": "Wireless Performance Restored",
+
+      "steps": [
+        {
+          "question": "High RF Interference?",
+          "action": "Change Channel Assignment"
+        },
+        {
+          "question": "High Client Density?",
+          "action": "Deploy Additional APs"
+        },
+        {
+          "question": "Low Signal Strength?",
+          "action": "Adjust AP Placement"
+        },
+        {
+          "question": "Bandwidth Saturation?",
+          "action": "Apply QoS Policies"
+        }
+      ]
     }
   ]
 }

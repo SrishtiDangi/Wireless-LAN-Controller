@@ -1,29 +1,51 @@
 {
-  "brand": "Cisco Unified Communications Manager",
+  "brand": "Wireless LAN Controller",
+
   "links": [
     {
       "id": "overview",
-      "label": "Overview",
-      "icon": "home",
-      "align":"center"
+      "label": "Overview"
+    },
+    
+    {
+      "id": "architecture",
+      "label": "Architecture"
     },
     {
-      "id": "call-flow",
-      "label": "Call Processing",
-      "icon": "phone",
-      "align":"center"
+      "id": "capwap",
+      "label": "CAPWAP"
     },
     {
-      "id": "gateway-pstn",
-      "label": "Voice Infrastructure",
-      "icon": "network",
-      "align":"center"
+      "id": "protocols",
+      "label": "Protocols"
+    },
+    {
+      "id": "advantages",
+      "label": "Benefits"
+    },
+    {
+      "id": "media-resources",
+      "label": "Services"
     },
     {
       "id": "security",
-      "label": "Enterprise Features",
-      "icon": "cloud",
-      "align":"center"
+      "label": "Security"
+    },
+    {
+      "id": "mobility",
+      "label": "Mobility"
+    },
+    {
+      "id": "high-availability",
+      "label": "High Availability"
+    },
+    {
+      "id": "troubleshooting",
+      "label": "Troubleshooting"
+    },
+    {
+      "id": "diagnostic-guide",
+      "label": "Diagnostic Guide"
     }
   ]
 }

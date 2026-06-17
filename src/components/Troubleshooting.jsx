@@ -5,7 +5,6 @@ import { FaTools } from "react-icons/fa";
 function Troubleshooting() {
   const [data, setData] = useState(null);
 
-  // ✅ FETCH BACKEND DATA
   useEffect(() => {
     fetch("http://localhost:5000/api/troubleshooting")
       .then((res) => res.json())
@@ -23,19 +22,18 @@ function Troubleshooting() {
 
   return (
     <Reveal>
-      <section style={{ padding: "60px 0" }} id="troubleshooting">
-
-        {/* HEADER */}
+      <section id="troubleshooting" style={{ padding: "70px 0" }}>
         <div
           style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             gap: "12px",
-            marginBottom: "35px",
+            marginBottom: "15px",
           }}
         >
           <FaTools size={24} color="#2C3E50" />
+
           <h2
             style={{
               margin: 0,
@@ -48,105 +46,91 @@ function Troubleshooting() {
           </h2>
         </div>
 
-        {/* COMMON ISSUES */}
-        <div
+        <p
           style={{
-            background: "#fff",
-            borderRadius: "18px",
-            overflow: "hidden",
-            boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
-            marginBottom: "30px",
+            textAlign: "center",
+            color: "#5D6D7E",
+            marginBottom: "40px",
           }}
         >
-          <h3
-            style={{
-              padding: "18px",
-              margin: 0,
-              background: "#F8C8DC",
-              color: "#2C3E50",
-            }}
-          >
-            {data.issuesTitle}
-          </h3>
+          {data.subtitle}
+        </p>
 
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{ background: "#FCE4EC" }}>
-                <th style={{ padding: "12px" }}>Symptom</th>
-                <th style={{ padding: "12px" }}>Likely Cause</th>
-                <th style={{ padding: "12px" }}>Fix</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {data.issues.map((row, i) => (
-                <tr key={i}>
-                  <td style={{ padding: "12px", borderTop: "1px solid #eee" }}>
-                    {row[0]}
-                  </td>
-                  <td style={{ padding: "12px", borderTop: "1px solid #eee" }}>
-                    {row[1]}
-                  </td>
-                  <td style={{ padding: "12px", borderTop: "1px solid #eee" }}>
-                    {row[2]}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* CLI COMMANDS */}
         <div
           style={{
-            background: "#fff",
-            borderRadius: "18px",
-            overflow: "hidden",
-            boxShadow: "0 10px 25px rgba(0,0,0,0.08)",
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit,minmax(280px,1fr))",
+            gap: "20px",
           }}
         >
-          <h3
+          {data.items.map((item, index) => {
+            const colors = [
+              {
+                bg: "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
+                border: "#85C1E9",
+              },
+              {
+                bg: "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
+                border: "#C39BD3",
+              },
+              {
+                bg: "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
+                border: "#E8B89C",
+              },
+              {
+                bg: "linear-gradient(135deg,#D5F5E3,#EAFAF1)",
+                border: "#7DCEA0",
+              },
+            ];
+            const color = colors[index % colors.length];
+            return (
+            <div
+            key={index}
             style={{
-              padding: "18px",
-              margin: 0,
-              background: "#D6EAF8",
-              color: "#2C3E50",
+              background: color.bg,
+              border: `2px solid ${color.border}`,
+              borderRadius: "20px",
+              padding: "20px",
+              boxShadow: "0 10px 20px rgba(0,0,0,0.08)",
+              transition: "0.3s ease",
+              cursor: "pointer",
             }}
-          >
-            {data.commandsTitle}
-          </h3>
-
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{ background: "#EBF5FB" }}>
-                <th style={{ padding: "12px" }}>Command</th>
-                <th style={{ padding: "12px" }}>Purpose</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {data.commands.map((row, i) => (
-                <tr key={i}>
-                  <td
-                    style={{
-                      padding: "12px",
-                      borderTop: "1px solid #eee",
-                      fontFamily: "monospace",
-                      fontWeight: "700",
-                    }}
-                  >
-                    {row[0]}
-                  </td>
-
-                  <td style={{ padding: "12px", borderTop: "1px solid #eee" }}>
-                    {row[1]}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-8px)";
+              e.currentTarget.style.boxShadow ="0 18px 35px rgba(0,0,0,0.15)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0px)";
+              e.currentTarget.style.boxShadow =
+              "0 10px 20px rgba(0,0,0,0.08)";
+            }}
+            >
+              <h3
+              style={{
+                color: "#2C3E50",
+                fontSize: "17px",
+                fontWeight: "800",
+                marginBottom: "10px",
+                textAlign: "center",
+              }}
+              >
+                {item.title}
+              </h3>
+              <p
+              style={{
+                color: "#555",
+                fontSize: "14px",
+                lineHeight: "1.6",
+                margin: 0,
+              }}
+              >
+                {item.desc}
+              </p>
+            </div>
+            );
+            })}
         </div>
-
       </section>
     </Reveal>
   );

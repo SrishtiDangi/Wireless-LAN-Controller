@@ -1,63 +1,21 @@
-import { useState, useEffect } from "react";
-import {
-  FaHome,
-  FaServer,
-  FaNetworkWired,
-  FaBox,
-  FaPhone,
-  FaCloud,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { useState } from "react";
 
 function Navbar() {
-  const [navData, setNavData] = useState(null);
-  const [active, setActive] = useState("home");
+  const [active, setActive] = useState("overview");
 
-  const iconMap = {
-    home: <FaHome />,
-    server: <FaServer />,
-    network: <FaNetworkWired />,
-    box: <FaBox />,
-    phone: <FaPhone />,
-    cloud: <FaCloud />,
-    check: <FaCheckCircle />,
-  };
-
-  // ✅ FETCH NAVBAR FROM BACKEND
-  useEffect(() => {
-    fetch("http://localhost:5000/api/navbar")
-      .then((res) => res.json())
-      .then((data) => setNavData(data))
-      .catch((err) => console.log(err));
-  }, []);
-
-  // ✅ SCROLL SPY (ACTIVE SECTION TRACK)
-  useEffect(() => {
-    if (!navData) return;
-
-    const sections = navData.links
-      .map((l) => document.getElementById(l.id))
-      .filter(Boolean);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.3,
-      }
-    );
-
-    sections.forEach((sec) => observer.observe(sec));
-
-    return () => observer.disconnect();
-  }, [navData]);
-
-  if (!navData) return null;
+  const links = [
+    { id: "overview", label: "Overview" },
+    { id: "ecosystem", label: "Ecosystem" },
+    { id: "architecture", label: "Architecture" },
+    { id: "capwap", label: "CAPWAP" },
+    {id: "protocols", label: "Protocols" },
+    { id: "mobility", label: "Mobility" },
+    { id: "media-resources", label: "Services" },
+    { id: "high-availability", label: "High Availability" },
+    { id: "advantages", label: "Benefits" },  
+    { id: "troubleshooting", label: "Troubleshooting" },
+    { id: "diagnostic-guide", label: "Diagnostic Guide" },
+  ];
 
   return (
     <nav
@@ -68,13 +26,12 @@ function Navbar() {
         padding: "16px 8%",
         position: "sticky",
         top: 0,
-        zIndex: 100,
+        zIndex: 9999,
         background: "rgba(17,24,39,0.95)",
         backdropFilter: "blur(10px)",
         borderBottom: "1px solid #1e293b",
       }}
     >
-      {/* BRAND */}
       <h2
         style={{
           color: "white",
@@ -83,19 +40,17 @@ function Navbar() {
           fontWeight: "800",
         }}
       >
-        {navData.brand}
+        Wireless LAN Controller
       </h2>
 
-      {/* LINKS */}
       <div
         style={{
           display: "flex",
-          gap: "18px",
+          gap: "12px",
           flexWrap: "wrap",
-          justifyContent: "center",
         }}
       >
-        {navData.links.map((item) => (
+        {links.map((item) => (
           <button
             key={item.id}
             onClick={() => {
@@ -107,22 +62,16 @@ function Navbar() {
               });
             }}
             style={{
-              color: active === item.id ? "white" : "#cbd5e1",
-              fontSize: "13px",
-              fontWeight: "600",
-              padding: "6px 10px",
-              borderRadius: "8px",
-              transition: "0.3s",
-              background:
-                active === item.id ? "#1f2937" : "transparent",
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
               border: "none",
               cursor: "pointer",
+              padding: "8px 12px",
+              borderRadius: "8px",
+              fontWeight: "600",
+              color: active === item.id ? "white" : "#CBD5E1",
+              background:
+                active === item.id ? "#374151" : "transparent",
             }}
           >
-            {iconMap[item.icon]}
             {item.label}
           </button>
         ))}

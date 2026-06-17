@@ -1,0 +1,48 @@
+{
+  "title": "Access Point Join Process",
+  "subtitle": "How a Cisco Lightweight Access Point joins a Wireless LAN Controller",
+  "steps": [
+    {
+      "title": "Boot Process",
+      "desc": "The Access Point powers on and loads its operating system.",
+      "icon": "power",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "IP Address",
+      "desc": "The AP obtains an IP address from the DHCP server.",
+      "icon": "ip",
+      "color": "#D6EAF8",
+      "border": "#85C1E9"
+    },
+    {
+      "title": "WLC Discovery",
+      "desc": "The AP discovers available Wireless LAN Controllers using DHCP, DNS or Broadcast.",
+      "icon": "discovery",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
+    },
+    {
+      "title": "CAPWAP Join",
+      "desc": "The AP establishes a CAPWAP tunnel with the selected controller.",
+      "icon": "capwap",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "Configuration Download",
+      "desc": "The AP downloads WLAN, RF and policy configurations from the controller.",
+      "icon": "download",
+      "color": "#FDEDEC",
+      "border": "#F1948A"
+    },
+    {
+      "title": "Operational State",
+      "desc": "The AP becomes active and starts serving wireless clients.",
+      "icon": "success",
+      "color": "#FCF3CF",
+      "border": "#F7DC6F"
+    }
+  ]
+}

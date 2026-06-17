@@ -1,0 +1,36 @@
+{
+  "title": "WLAN Deployment Lifecycle",
+  "subtitle": "End-to-end process of designing, deploying, and optimizing enterprise wireless networks.",
+  "steps": [
+    {
+      "title": "Site Survey",
+      "desc": "Analyze coverage requirements, building layout, RF conditions, and user density.",
+      "color": "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "WLC Configuration",
+      "desc": "Configure management interfaces, WLANs, security policies, and controller settings.",
+      "color": "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
+      "border": "#85C1E9"
+    },
+    {
+      "title": "Access Point Deployment",
+      "desc": "Install APs, connect uplinks, and verify CAPWAP registration with the controller.",
+      "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
+      "border": "#C39BD3"
+    },
+    {
+      "title": "Client Validation",
+      "desc": "Verify authentication, roaming behavior, DHCP assignment, and application access.",
+      "color": "linear-gradient(135deg,#D5F5E3,#EAFAF1)",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "RF Optimization",
+      "desc": "Tune channels, transmit power, QoS policies, and interference mitigation settings.",
+      "color": "linear-gradient(135deg,#FDEDEC,#FFF5F5)",
+      "border": "#F1948A"
+    }
+  ]
+}

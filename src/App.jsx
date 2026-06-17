@@ -1,61 +1,73 @@
 import Navbar from "./components/Navbar";
-import Overview from "./components/Overview";
-import Architecture from "./components/Architecture";
-import RackOverview from "./components/RackOverview";
-import CallFlow from "./components/CallFlow";
-import PBXComparison from "./components/PBXComparison";
-import Protocols from "./components/Protocols";
-import PhoneRegistration from "./components/PhoneRegistration";
-import DialPlan from "./components/DialPlan";
-import CodecQoS from "./components/CodecQoS";
-import Advantages from "./components/Advantages";
-import Footer from "./components/Footer";
-import CMS from "./components/CMS";
-import ClassOfService from "./components/ClassOfService";
-import Troubleshooting from "./components/Troubleshooting";
-import Ecosystem from "./components/Ecosystem";
-import GatewayPSTN from "./components/GatewayPSTN";
-import Security from "./components/Security";
-import Mobility from "./components/Mobility";
 import Over from "./components/Over";
+
+/* INTRODUCTION */
+
+import Ecosystem from "./components/Ecosystem";
+
+/* WLC CORE */
+import Architecture from "./components/Architecture";
+import WlanDeployment from "./components/WlanDeployment";
+import WorkingProcess from "./components/WorkingProcess";
+import ApJoin from "./components/ApJoin";
+import Capwap from "./components/Capwap";
+
+/* NETWORK */
+import NetworkLines from "./components/NetworkLines";
+import WlcPorts from "./components/WlcPorts";
+import Protocols from "./components/Protocols";
+
+/* ENTERPRISE FEATURES */
+import Mobility from "./components/Mobility";
 import MediaResources from "./components/MediaResources";
-import HighAvailability from "./components/HighAvailibilty";
+import HighAvailibility from "./components/HighAvailibilty";
+import Advantages from "./components/Advantages";
+
+/* TROUBLESHOOTING */
+import Troubleshooting from "./components/Troubleshooting";
 import DiagnosticFieldGuide from "./components/DiagnosticFieldGuide";
+
+/* OPTIONAL */
+import RackOverview from "./components/RackOverview";
+
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <>
       <Navbar />
+
+      {/* HERO */}
       <Over />
 
-      {/* OVERVIEW */}
-      <Overview />
+      {/* WHAT IS WLC */}
+      
       <Ecosystem />
+
+      {/* HOW WLC WORKS */}
       <Architecture />
-      <Advantages />
+      <WlanDeployment />
+      <WorkingProcess />
+      <ApJoin />
+      <Capwap />
 
-      {/* CALL PROCESSING */}
-      <PhoneRegistration />
-      <CallFlow />
-      <DialPlan />
-      <ClassOfService />
-
-      {/* VOICE INFRASTRUCTURE */}
-      <GatewayPSTN />
+      {/* NETWORK COMMUNICATION */}
+      <NetworkLines />
+      <WlcPorts />
       <Protocols />
-      <CodecQoS />
-      <MediaResources />
 
       {/* ENTERPRISE FEATURES */}
-      <Security />
       <Mobility />
-      <HighAvailability />
-      <Troubleshooting />
+      <MediaResources />
+      <HighAvailibility />
+      <Advantages />
 
-      {/* OPTIONAL / EXTRA */}
-      <RackOverview />
-      <CMS />
-      <PBXComparison />
+      {/* TROUBLESHOOTING */}
+      <Troubleshooting />
       <DiagnosticFieldGuide />
+
+      {/* OPTIONAL */}
+      <RackOverview />
 
       <Footer />
     </>

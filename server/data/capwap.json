@@ -1,0 +1,40 @@
+{
+  "title": "CAPWAP AP Join Process",
+  "steps": [
+    {
+      "icon": "ap",
+      "title": "AP Boot",
+      "desc": "Access Point powers on and initializes hardware.",
+      "color": "#D6EAF8",
+      "border": "#85C1E9"
+    },
+    {
+      "icon": "discover",
+      "title": "WLC Discovery",
+      "desc": "AP discovers Wireless LAN Controller using DHCP, DNS or Broadcast.",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
+    },
+    {
+      "icon": "join",
+      "title": "CAPWAP Join",
+      "desc": "AP establishes CAPWAP tunnel with WLC.",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
+    },
+    {
+      "icon": "download",
+      "title": "Config Download",
+      "desc": "Controller pushes WLAN and RF configuration.",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
+    },
+    {
+      "icon": "ready",
+      "title": "AP Operational",
+      "desc": "AP starts serving wireless clients.",
+      "color": "#FDEBD0",
+      "border": "#D4AC0D"
+    }
+  ]
+}

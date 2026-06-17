@@ -1,33 +1,34 @@
 {
-  "title": "Security Features",
+  "title": "Wireless Security & Access Control",
+  "subtitle": "Protecting enterprise WLANs using authentication, encryption, and policy enforcement.",
   "items": [
     {
-      "title": "TLS",
-      "desc": "Encrypts signaling traffic between endpoints and CUCM.",
-      "icon": "lock",
-      "color": "#D6EAF8",
-      "border": "#3498DB"
-    },
-    {
-      "title": "SRTP",
-      "desc": "Encrypts voice media streams for secure calls.",
       "icon": "shield",
-      "color": "#E8F8F5",
-      "border": "#2ECC71"
+      "title": "WPA2 / WPA3 Security",
+      "desc": "Encrypts wireless traffic between clients and access points to ensure confidentiality and secure communication.",
+      "color": "linear-gradient(135deg,#FADBD8,#FFF5F4)",
+      "border": "#E59866"
     },
     {
-      "title": "CAPF",
-      "desc": "Certificate Authority Proxy Function for device certificates.",
-      "icon": "key",
-      "color": "#FDEBD0",
-      "border": "#F39C12"
+      "icon": "server",
+      "title": "802.1X Authentication",
+      "desc": "Uses RADIUS authentication to verify users and devices before granting WLAN access.",
+      "color": "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
+      "border": "#85C1E9"
     },
     {
-      "title": "LDAP",
-      "desc": "Directory integration for centralized authentication.",
-      "icon": "database",
-      "color": "#EDE7F6",
-      "border": "#8E44AD"
+      "icon": "lock",
+      "title": "AAA Integration",
+      "desc": "Integrates with Cisco ISE, RADIUS, or TACACS+ servers for centralized authentication and authorization.",
+      "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
+      "border": "#C39BD3"
+    },
+    {
+      "icon": "network",
+      "title": "Guest Access",
+      "desc": "Provides isolated internet connectivity for visitors without exposing internal enterprise resources.",
+      "color": "linear-gradient(135deg,#D5F5E3,#EAFAF1)",
+      "border": "#7DCEA0"
     }
   ]
 }

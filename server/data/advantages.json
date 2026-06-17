@@ -1,23 +1,48 @@
 {
-  "title": "Key Business Benefits",
+  "title": "Benefits of Wireless LAN Controller",
+  "subtitle": "Why enterprises deploy Cisco Wireless LAN Controllers",
   "items": [
     {
-      "title": "High Availability",
-      "desc": "System remains operational even during failures",
+      "title": "Centralized Management",
+      "desc": "Manage hundreds of access points from a single controller without configuring each AP individually.",
+      "icon": "management",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "Seamless Roaming",
+      "desc": "Clients move between access points without dropping voice calls or active sessions.",
+      "icon": "roaming",
       "color": "#D6EAF8",
       "border": "#85C1E9"
     },
     {
-      "title": "Scalability",
-      "desc": "Easily expand users and infrastructure",
-      "color": "#E8F8F5",
-      "border": "#76D7C4"
+      "title": "Enhanced Security",
+      "desc": "Supports WPA3, 802.1X authentication, RADIUS integration and rogue AP detection.",
+      "icon": "security",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
     },
     {
-      "title": "Redundancy",
-      "desc": "Backup systems ensure zero downtime",
-      "color": "#FDEBD0",
-      "border": "#F5CBA7"
+      "title": "Scalability",
+      "desc": "Easily supports large campus deployments with centralized policy enforcement.",
+      "icon": "scale",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "RF Optimization",
+      "desc": "Automatically adjusts channels and transmit power to improve wireless performance.",
+      "icon": "rf",
+      "color": "#FDEDEC",
+      "border": "#F1948A"
+    },
+    {
+      "title": "High Availability",
+      "desc": "Provides controller redundancy and AP failover for continuous network availability.",
+      "icon": "availability",
+      "color": "#FCF3CF",
+      "border": "#F7DC6F"
     }
   ]
 }

@@ -1,0 +1,42 @@
+{
+  "title": "Wireless LAN Controller Working Process",
+  "subtitle": "How APs, WLCs, and Wireless Clients interact inside an enterprise WLAN.",
+  "steps": [
+    {
+      "title": "Access Point Boots",
+      "desc": "The Access Point powers on using PoE and obtains an IP address from DHCP.",
+      "color": "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "WLC Discovery",
+      "desc": "The AP discovers the Wireless LAN Controller using DHCP Option 43, DNS, or broadcast discovery.",
+      "color": "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
+      "border": "#85C1E9"
+    },
+    {
+      "title": "CAPWAP Join",
+      "desc": "The AP establishes a secure CAPWAP tunnel and joins the controller.",
+      "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
+      "border": "#C39BD3"
+    },
+    {
+      "title": "SSID Broadcast",
+      "desc": "The AP starts advertising configured WLANs and SSIDs to nearby clients.",
+      "color": "linear-gradient(135deg,#D5F5E3,#EAFAF1)",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "Client Authentication",
+      "desc": "Wireless clients authenticate using PSK, WPA2/WPA3 Enterprise, or 802.1X.",
+      "color": "linear-gradient(135deg,#FDEDEC,#FFF5F5)",
+      "border": "#F1948A"
+    },
+    {
+      "title": "Traffic Forwarding",
+      "desc": "User traffic is forwarded through the AP and controller according to WLAN policies.",
+      "color": "linear-gradient(135deg,#FCF3CF,#FEF9E7)",
+      "border": "#F7DC6F"
+    }
+  ]
+}

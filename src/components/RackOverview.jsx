@@ -1,220 +1,110 @@
-import { motion } from "framer-motion";
-import { FaServer } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  FaServer,
+  FaNetworkWired,
+  FaHdd,
+  FaCloud,
+  FaDatabase,
+  FaUserShield,
+} from "react-icons/fa";
 
 function RackComparison() {
   const [rackData, setRackData] = useState(null);
+
   useEffect(() => {
     fetch("http://localhost:5000/api/rack")
-    .then(res => res.json())
-    .then(data => setRackData(data))
-    .catch(err => console.log(err));
-}, []);
+      .then((res) => res.json())
+      .then((data) => setRackData(data))
+      .catch((err) => console.log(err));
+  }, []);
 
-if (!rackData?.items?.length) return <div>Loading...</div>;
-
-  const cardStyle = (bg, border) => ({
-    width: "300px",
-    background: `linear-gradient(135deg, ${bg}, #ffffff)`,
-    padding: "22px",
-    borderRadius: "16px",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.10)",
-    border: `2px solid ${border}`,
-    textAlign: "center",
-    transition: "0.25s ease",
-    cursor: "pointer",
-  });
-
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+  const iconMap = {
+    "Wireless LAN Controller": <FaServer size={30} />,
+    "Access Points": <FaNetworkWired size={30} />,
+    "Core Switch": <FaHdd size={30} />,
+    "Distribution Switch": <FaCloud size={30} />,
+    "DHCP Server": <FaDatabase size={30} />,
+    "Authentication Server": <FaUserShield size={30} />,
   };
 
-  const item = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
+  // 🔥 COLORS TAKEN STYLE LIKE YOUR ECOSYSTEM
+  const colorPalette = [
+    "#F8C8DC", // pink
+    "#E8DFF5", // lavender
+    "#D6EAF8", // blue
+    "#D5F5E3", // green
+    "#FBE5D6", // peach
+    "#ebcae8", // yellow
+  ];
+
+  if (!rackData) {
+    return (
+      <section style={{ padding: "60px 0", textAlign: "center" }}>
+        Loading Infrastructure...
+      </section>
+    );
+  }
 
   return (
-    <section style={{ padding: "50px 0" }} id="rack-overview">
+    <section id="rack-overview" style={{ padding: "70px 0" }}>
 
       {/* HEADER */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "10px",
-          marginBottom: "35px",
-          color: "#34495E",
-        }}
-      >
-        <FaServer size={28} />
-        <h2 style={{ fontSize: "24px", fontWeight: "800" }}>
-          Rack Comparison
+      <div style={{ textAlign: "center", marginBottom: "15px" }}>
+        <h2 style={{ fontSize: "26px", fontWeight: "900", color: "#2C3E50" }}>
+          {rackData.title}
         </h2>
       </div>
 
-      {/* MAIN */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+      <p style={{ textAlign: "center", color: "#5D6D7E", marginBottom: "40px" }}>
+        {rackData.subtitle}
+      </p>
+
+      {/* GRID */}
+      <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "30px",
-          flexWrap: "wrap",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+          gap: "20px",
         }}
       >
-
-        {/* RACK A */}
-        <motion.div
-          variants={item}
-          style={cardStyle("#FDEBD0", "#F5CBA7")}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-8px) scale(1.03)";
-            e.currentTarget.style.boxShadow =
-              "0 18px 40px rgba(0,0,0,0.18)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0) scale(1)";
-            e.currentTarget.style.boxShadow =
-              "0 10px 25px rgba(0,0,0,0.10)";
-          }}
-        >
-          <FaServer size={38} color="#B9770E" />
-
-          <h3 style={{ marginTop: "12px", color: "#7E5109" }}>
-            {rackData?.items?.[0]?.name}{" "}
-            <span
-              style={{
-                fontSize: "12px",
-                background: "#F39C12",
-                color: "#fff",
-                padding: "3px 8px",
-                borderRadius: "10px",
-                marginLeft: "6px",
-              }}
-            >
-              Primary
-            </span>
-          </h3>
-
-          <div
+        {rackData.items.map((item, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ y: -8 }}
             style={{
-              marginTop: "15px",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "8px",
-              justifyContent: "center",
+              background: colorPalette[index % colorPalette.length],
+              borderRadius: "18px",
+              padding: "22px",
+              textAlign: "center",
+              boxShadow: "0 10px 20px rgba(0,0,0,0.08)",
+              border: "2px solid rgba(0,0,0,0.05)",
             }}
           >
-            {rackData?.items?.[0]?.features.map((item, i) => (
-              <span
-                key={i}
-                style={{
-                  fontSize: "12px",
-                  padding: "6px 10px",
-                  borderRadius: "20px",
-                  background: "rgba(255,255,255,0.8)",
-                  border: "1px solid #F5CBA7",
-                }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+            {/* ICON */}
+            <div style={{ marginBottom: "12px", color: "#2C3E50" }}>
+              {iconMap[item.title] || <FaServer size={30} />}
+            </div>
 
-        {/* VS */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          style={{
-            fontSize: "18px",
-            fontWeight: "800",
-            padding: "12px 18px",
-            borderRadius: "50%",
-            background: "#f4f4f4",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
-          }}
-        >
-          VS
-        </motion.div>
-
-        {/* RACK B */}
-        <motion.div
-          variants={item}
-          style={cardStyle("#D6EAF8", "#85C1E9")}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-8px) scale(1.03)";
-            e.currentTarget.style.boxShadow =
-              "0 18px 40px rgba(0,0,0,0.18)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0) scale(1)";
-            e.currentTarget.style.boxShadow =
-              "0 10px 25px rgba(0,0,0,0.10)";
-          }}
-        >
-          <FaServer size={38} color="#1F618D" />
-
-          <h3 style={{ marginTop: "12px", color: "#1B4F72" }}>
-            Rack B{" "}
-            <span
+            {/* TITLE */}
+            <h3
               style={{
-                fontSize: "12px",
-                background: "#3498DB",
-                color: "#fff",
-                padding: "3px 8px",
-                borderRadius: "10px",
-                marginLeft: "6px",
+                fontSize: "18px",
+                fontWeight: "800",
+                color: "#2C3E50",
+                marginBottom: "10px",
               }}
             >
-              Secondary
-            </span>
-          </h3>
+              {item.title}
+            </h3>
 
-          <div
-            style={{
-              marginTop: "15px",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "8px",
-              justifyContent: "center",
-            }}
-          >
-            {rackData?.items?.[1]?.features.map((item, i) => (
-              <span
-                key={i}
-                style={{
-                  fontSize: "12px",
-                  padding: "6px 10px",
-                  borderRadius: "20px",
-                  background: "rgba(255,255,255,0.8)",
-                  border: "1px solid #85C1E9",
-                }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-
-      </motion.div>
+            {/* DESC */}
+            <p style={{ fontSize: "14px", color: "#555", margin: 0 }}>
+              {item.desc}
+            </p>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }

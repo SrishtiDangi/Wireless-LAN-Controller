@@ -4,36 +4,26 @@ import fs from "fs";
 import diagnosticFieldGuide from "./data/diagnosticFieldGuide.json" with { type: "json" };
 import ecosystem from "./data/ecosystem.json" with { type: "json" };
 import architecture from "./data/architecture.json" with { type: "json" };
-import gateway from "./data/gateway.json" with { type: "json" };
-import phoneRegistration from "./data/phoneRegistration.json" with { type: "json" };
-import callflow from "./data/callflow.json" with { type: "json" };
-import dialplan from "./data/dialplan.json" with { type: "json" };
 import rack from "./data/rack.json" with { type: "json" };
-import cms from "./data/cms.json" with { type: "json" };
 import navbar from "./data/navbar.json" with { type: "json" };
-import pbxComparison from "./data/pbxComparison.json" with { type: "json" };
 import protocols from "./data/protocols.json" with { type: "json" };
-import codecQoS from "./data/codecQoS.json" with {type:"json"};
 import mediaResources from "./data/mediaResources.json" with {type:"json"};
 import security from "./data/security.json" with {type: "json"};
 import highAvailability from "./data/highAvailability.json" with {type: "json"};
 import mobility from "./data/mobility.json" with {type: "json"};
-import classOfService from "./data/classOfService.json" with {type: "json"};
 import troubleshooting from "./data/troubleshooting.json" with {type:"json"};
 import advantages from "./data/advantages.json" with {type:"json"};
 import footer from "./data/footer.json" with {type:"json"};
 import over from "./data/over.json" with {type: "json"};
+import apJoin from "./data/apJoin.json" with {type:"json"};
+import capwap from "./data/capwap.json" with {type:"json"};
+import wlanDeployment from "./data/wlanDeployment.json" with {type:"json"};
+import wlcPorts from "./data/wlcPorts.json" with {type:"json"};
+import workingProcess from "./data/workingProcess.json" with {type:"json"};
 const app = express();
 
 app.use(cors());
-
-const overview = JSON.parse(
-  fs.readFileSync("./data/overview.json", "utf8")
-);
-
-app.get("/api/overview", (req, res) => {
-  res.json(overview);
-});
+app.use(express.json());
 
 app.listen(5000, () => {
   console.log("Server running on port 5000");
@@ -47,44 +37,38 @@ app.get("/api/architecture", (req, res) => {
   res.json(architecture);
 
 });
+app.get("/api/workingProcess",(req,res)=>{
+  res.json(workingProcess);
+})
+app.get("/api/apJoin", (req,res)=>{
+  res.json(apJoin);
+})
 
-app.get("/api/gateway", (req, res) => {
-  res.json(gateway);
-});
-app.get("/api/phoneRegistration", (req, res) => {
-  res.json(phoneRegistration);
-});
-app.get("/api/callflow", (req, res) => {
-  res.json(callflow);
-});
+app.get("/api/capwap",(req,res)=>{
+  res.json(capwap);
+})
 
-app.get("/api/dialplan", (req, res) => {
-  res.json(dialplan);
-});
+app.get("/api/wlanDeployment",(req,res)=>{
+  res.json(wlanDeployment);
+})
 
+app.get("/api/wlcPorts", (req,res)=>{
+  res.json(wlcPorts);
+})
 app.get("/api/rack", (req, res) => {
   res.json(rack);
 });
 
-app.get("/api/cms", (req, res) => {
-  res.json(cms);
-});
 
 app.get("/api/navbar", (req, res) => {
   res.json(navbar);
 });
 
-app.get("/api/pbxComparison", (req, res) => {
-  res.json(pbxComparison);
-});
 
 app.get("/api/protocols", (req, res) => {
   res.json(protocols);
 });
 
-app.get("/api/codecQoS", (req, res) => {
-  res.json(codecQoS);
-});
 app.get("/api/mediaResources", (req, res) =>{
     res.json(mediaResources);
 });
@@ -96,9 +80,6 @@ app.get("/api/highAvailability", (req, res) =>{
 });
 app.get("/api/mobility", (req,res)=>{
     res.json(mobility);
-});
-app.get("/api/classOfService", (req,res)=>{
-    res.json(classOfService);
 });
 
 app.get("/api/troubleshooting", (req,res)=>{

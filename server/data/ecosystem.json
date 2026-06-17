@@ -1,42 +1,54 @@
 {
-  "title": "CUCM Ecosystem",
-  "subtitle": "How CUCM integrates enterprise communication services",
+  "title": "Wireless LAN Ecosystem",
+  "subtitle": "Core Components Working Together in a Cisco Wireless Network",
+
   "nodes": [
     {
-      "id": "jabber",
-      "title": "Cisco Jabber",
-      "icon": "phone",
-      "color": "#E8F8F5"
+      "title": "Wireless LAN Controller",
+      "desc": "Centralized platform for WLAN management, security and RF optimization.",
+      "icon": "controller",
+      "color": "#D6EAF8",
+      "border": "#85C1E9"
     },
+
     {
-      "id": "phone",
-      "title": "IP Phones",
-      "icon": "phone",
-      "color": "#D6EAF8"
+      "title": "Access Points",
+      "desc": "Provide wireless coverage and connect clients to the network.",
+      "icon": "ap",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
     },
+
     {
-      "id": "cucm",
-      "title": "CUCM",
-      "icon": "server",
-      "color": "gradient"
+      "title": "Wireless Clients",
+      "desc": "Laptops, smartphones and tablets accessing WLAN services.",
+      "icon": "client",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
     },
+
     {
-      "id": "unity",
-      "title": "Unity Connection",
-      "icon": "cloud",
-      "color": "#FDEBD0"
+      "title": "AAA / RADIUS Server",
+      "desc": "Handles authentication, authorization and accounting services.",
+      "icon": "security",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
     },
+
     {
-      "id": "expressway",
-      "title": "Expressway",
-      "icon": "globe",
-      "color": "#D5F5E3"
+      "title": "Network Infrastructure",
+      "desc": "Switches and routers providing connectivity between APs and WLC.",
+      "icon": "network",
+      "color": "#FDEBD0",
+      "border": "#D4AC0D"
     },
+
     {
-      "id": "pstn",
-      "title": "PSTN",
-      "icon": "globe",
-      "color": "#F9EBEA"
+      "title": "Guest Access Services",
+      "desc": "Provides secure internet access for guest users and visitors.",
+      "icon": "guest",
+      "color": "#FADBD8",
+      "border": "#E74C3C"
     }
   ]
 }

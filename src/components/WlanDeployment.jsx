@@ -1,44 +1,59 @@
 import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 import {
-  FaCogs,
-  FaWifi,
-  FaShieldAlt,
-  FaExpandArrowsAlt,
-  FaBroadcastTower,
+  FaSearch,
   FaServer,
+  FaBroadcastTower,
+  FaLaptop,
+  FaChartLine,
 } from "react-icons/fa";
 
-function Advantages() {
+function WLANDeployment() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/advantages")
+    fetch("http://localhost:5000/api/wlanDeployment")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
   }, []);
 
-  const iconMap = {
-    management: <FaCogs size={30} />,
-    roaming: <FaWifi size={30} />,
-    security: <FaShieldAlt size={30} />,
-    scale: <FaExpandArrowsAlt size={30} />,
-    rf: <FaBroadcastTower size={30} />,
-    availability: <FaServer size={30} />,
-  };
+  if (!data) {
+    return (
+      <section style={{ padding: "60px 0", textAlign: "center" }}>
+        Loading WLAN Deployment...
+      </section>
+    );
+  }
 
-  if (!data) return null;
+  const icons = [
+    <FaSearch size={28} />,
+    <FaServer size={28} />,
+    <FaBroadcastTower size={28} />,
+    <FaLaptop size={28} />,
+    <FaChartLine size={28} />,
+  ];
 
   return (
-    <section id="advantages" style={{ padding: "70px 0" }}>
+    <section
+      id="wlan-deployment"
+      style={{
+        padding: "70px 0",
+      }}
+    >
       <Reveal>
-        <div style={{ textAlign: "center", marginBottom: "45px" }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "50px",
+          }}
+        >
           <h2
             style={{
               fontSize: "26px",
               fontWeight: "900",
               color: "#2C3E50",
+              marginBottom: "10px",
             }}
           >
             {data.title}
@@ -47,7 +62,7 @@ function Advantages() {
           <p
             style={{
               color: "#5D6D7E",
-              marginTop: "8px",
+              margin: 0,
             }}
           >
             {data.subtitle}
@@ -58,23 +73,23 @@ function Advantages() {
       <Reveal>
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns:
-              "repeat(auto-fit,minmax(260px,1fr))",
-            gap: "22px",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "25px",
           }}
         >
-          {data.items.map((item, index) => (
+          {data.steps.map((step, index) => (
             <div
               key={index}
               style={{
-                background: item.color,
-                border: `2px solid ${item.border}`,
+                width: "240px",
+                background: step.color,
+                border: `2px solid ${step.border}`,
                 borderRadius: "20px",
-                padding: "24px",
+                padding: "22px",
                 textAlign: "center",
-                boxShadow:
-                  "0 10px 20px rgba(0,0,0,0.08)",
+                boxShadow: "0 12px 28px rgba(0,0,0,0.08)",
                 cursor: "pointer",
                 transition: "0.3s ease",
               }}
@@ -88,7 +103,7 @@ function Advantages() {
                 e.currentTarget.style.transform =
                   "translateY(0px)";
                 e.currentTarget.style.boxShadow =
-                  "0 10px 20px rgba(0,0,0,0.08)";
+                  "0 12px 28px rgba(0,0,0,0.08)";
               }}
             >
               <div
@@ -97,7 +112,7 @@ function Advantages() {
                   color: "#2C3E50",
                 }}
               >
-                {iconMap[item.icon]}
+                {icons[index]}
               </div>
 
               <h3
@@ -108,7 +123,7 @@ function Advantages() {
                   marginBottom: "10px",
                 }}
               >
-                {item.title}
+                {step.title}
               </h3>
 
               <p
@@ -119,7 +134,7 @@ function Advantages() {
                   margin: 0,
                 }}
               >
-                {item.desc}
+                {step.desc}
               </p>
             </div>
           ))}
@@ -129,4 +144,4 @@ function Advantages() {
   );
 }
 
-export default Advantages;
+export default WLANDeployment;

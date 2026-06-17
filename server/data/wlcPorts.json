@@ -1,0 +1,48 @@
+{
+  "title": "WLC Interfaces & Network Ports",
+  "subtitle": "Critical interfaces and communication ports used by Cisco Wireless LAN Controllers.",
+  "ports": [
+    {
+      "title": "Management Interface",
+      "desc": "Primary interface used for controller management, AP communication, and WLAN services.",
+      "port": "HTTPS / SSH",
+      "color": "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
+      "border": "#85C1E9"
+    },
+    {
+      "title": "CAPWAP Control",
+      "desc": "Access Points communicate with the controller using CAPWAP control messages.",
+      "port": "UDP 5246",
+      "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
+      "border": "#C39BD3"
+    },
+    {
+      "title": "CAPWAP Data",
+      "desc": "Wireless client traffic is tunneled between APs and the controller.",
+      "port": "UDP 5247",
+      "color": "linear-gradient(135deg,#D5F5E3,#EAFAF1)",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "RADIUS Authentication",
+      "desc": "Used for 802.1X and enterprise wireless authentication.",
+      "port": "UDP 1812 / 1813",
+      "color": "linear-gradient(135deg,#FBE5D6,#FFF4EC)",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "DHCP Services",
+      "desc": "Provides IP addressing and network parameters to wireless clients.",
+      "port": "UDP 67 / 68",
+      "color": "linear-gradient(135deg,#FDEDEC,#FFF5F5)",
+      "border": "#F1948A"
+    },
+    {
+      "title": "DNS Resolution",
+      "desc": "Allows AP discovery and hostname resolution within the network.",
+      "port": "UDP/TCP 53",
+      "color": "linear-gradient(135deg,#FCF3CF,#FEF9E7)",
+      "border": "#F7DC6F"
+    }
+  ]
+}

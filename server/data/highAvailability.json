@@ -1,41 +1,42 @@
 {
-  "title": "High Availability & Disaster Recovery",
-  "subtitle": "CUCM redundancy, failover and business continuity architecture",
+  "title": "Wireless High Availability",
+  "subtitle": "Ensuring Continuous Wireless Connectivity and Controller Redundancy",
+
   "items": [
     {
+      "title": "Controller Redundancy",
+      "desc": "Primary and secondary controllers provide failover protection during controller outages.",
       "icon": "server",
-      "title": "Publisher",
-      "desc": "Primary node handling configuration and database writes in CUCM cluster.",
       "color": "#D6EAF8",
-      "border": "#3498DB"
+      "border": "#85C1E9"
     },
     {
-      "icon": "database",
-      "title": "Subscribers",
-      "desc": "Handle call processing and provide redundancy and load balancing.",
-      "color": "#E8F8F5",
-      "border": "#2ECC71"
-    },
-    {
-      "icon": "shield",
-      "title": "SRST",
-      "desc": "Enables branch survivability during WAN or CUCM connectivity failure.",
-      "color": "#FDEBD0",
-      "border": "#F39C12"
-    },
-    {
+      "title": "Stateful Switchover (SSO)",
+      "desc": "Maintains client sessions and AP connectivity during active controller failure.",
       "icon": "sync",
-      "title": "DRS Backup",
-      "desc": "Disaster Recovery System used for CUCM backup and restore operations.",
-      "color": "#FADBD8",
-      "border": "#E74C3C"
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
     },
     {
+      "title": "AP Failover",
+      "desc": "Access Points automatically join a backup controller if the primary controller becomes unavailable.",
+      "icon": "shield",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
+    },
+    {
+      "title": "Client Roaming Continuity",
+      "desc": "Allows users to stay connected during controller failover events.",
       "icon": "globe",
-      "title": "Geographic Redundancy",
-      "desc": "Cluster deployment across multiple sites for maximum availability.",
-      "color": "#E8DFF5",
-      "border": "#8E44AD"
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
+    },
+    {
+      "title": "Mobility Groups",
+      "desc": "Controllers share roaming and session information for uninterrupted service.",
+      "icon": "database",
+      "color": "#FDEBD0",
+      "border": "#D4AC0D"
     }
   ]
 }

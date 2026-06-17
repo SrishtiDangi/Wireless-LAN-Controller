@@ -1,34 +1,46 @@
 {
-  "title": "Mobility Features",
-  "subtitle": "Enterprise mobility and remote communication capabilities",
+  "title": "Wireless Mobility",
+  "subtitle": "Seamless Roaming and Continuous Connectivity Across Wireless Networks",
+
   "items": [
     {
-      "title": "Cisco Jabber",
-      "desc": "Softphone, messaging and presence platform for enterprise users.",
-      "icon": "mobile",
+      "title": "Layer 2 Roaming",
+      "desc": "Clients move between access points within the same VLAN without changing IP addresses.",
+      "icon": "wifi",
       "color": "#D6EAF8",
-      "border": "#3498DB"
+      "border": "#85C1E9"
     },
+
     {
-      "title": "Extension Mobility",
-      "desc": "Users can log in to any IP Phone and access their profile.",
-      "icon": "user",
-      "color": "#E8F8F5",
-      "border": "#2ECC71"
+      "title": "Layer 3 Roaming",
+      "desc": "Maintains client connectivity when moving across different VLANs and subnets.",
+      "icon": "network",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
     },
+
     {
-      "title": "Single Number Reach",
-      "desc": "Ring desk phone and mobile phone simultaneously.",
-      "icon": "phone",
+      "title": "Mobility Groups",
+      "desc": "Controllers exchange client information to support seamless roaming across the wireless network.",
+      "icon": "group",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
+    },
+
+    {
+      "title": "Fast Secure Roaming",
+      "desc": "802.11r and related technologies reduce authentication delays during roaming.",
+      "icon": "security",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
+    },
+
+    {
+      "title": "Guest Mobility",
+      "desc": "Allows guest users to move across wireless coverage areas while maintaining sessions.",
+      "icon": "globe",
       "color": "#FDEBD0",
-      "border": "#F39C12"
-    },
-    {
-      "title": "Mobile Connect",
-      "desc": "Extend enterprise calling experience to mobile devices.",
-      "icon": "laptop",
-      "color": "#EDE7F6",
-      "border": "#8E44AD"
+      "border": "#D4AC0D"
     }
   ]
 }

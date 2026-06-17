@@ -1,44 +1,48 @@
 {
-  "title": "Key CUCM Protocols",
-  "icon": "network",
-  "headerColor": "#F8C8DC",
-  "borderColor": "#D6EAF8",
-  "columns": ["Protocol", "Type", "Purpose"],
-  "rows": [
+  "title": "Wireless Protocol Landscape",
+  "subtitle": "Protocols Powering Cisco Wireless LAN Networks",
+
+  "protocols": [
     {
-      "protocol": "SIP",
-      "type": "Signaling",
-      "purpose": "IP Call Setup & Control"
+      "name": "CAPWAP",
+      "desc": "Control and Provisioning of Wireless Access Points. Used between Access Points and the Wireless LAN Controller.",
+      "color": "#D6EAF8",
+      "border": "#85C1E9"
     },
+
     {
-      "protocol": "SCCP",
-      "type": "Cisco Proprietary",
-      "purpose": "IP Phone Control"
+      "name": "IEEE 802.11",
+      "desc": "Core wireless communication standard used for Wi-Fi connectivity between clients and access points.",
+      "color": "#E8DFF5",
+      "border": "#C39BD3"
     },
+
     {
-      "protocol": "H.323",
-      "type": "Signaling",
-      "purpose": "Legacy VoIP Communication"
+      "name": "WPA2 / WPA3",
+      "desc": "Provides wireless encryption, authentication and secure client access.",
+      "color": "#FBE5D6",
+      "border": "#E8B89C"
     },
+
     {
-      "protocol": "RTP / SRTP",
-      "type": "Media",
-      "purpose": "Voice Media Transport"
+      "name": "RADIUS",
+      "desc": "Used for centralized Authentication, Authorization and Accounting services.",
+      "color": "#D5F5E3",
+      "border": "#7DCEA0"
     },
+
     {
-      "protocol": "MGCP",
-      "type": "Gateway Control",
-      "purpose": "PSTN Gateway Management"
+      "name": "DHCP",
+      "desc": "Assigns IP addresses and network parameters to wireless clients and access points.",
+      "color": "#FDEBD0",
+      "border": "#D4AC0D"
     },
+
     {
-      "protocol": "LDAP",
-      "type": "Directory",
-      "purpose": "User Synchronization"
-    },
-    {
-      "protocol": "TFTP",
-      "type": "File Transfer",
-      "purpose": "Phone Configuration Download"
+      "name": "DNS",
+      "desc": "Supports hostname resolution and WLC discovery mechanisms.",
+      "color": "#FADBD8",
+      "border": "#E74C3C"
     }
   ]
 }

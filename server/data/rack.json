@@ -1,29 +1,30 @@
 {
-  "title": "Rack Comparison",
+  "title": "Wireless LAN Infrastructure",
+  "subtitle": "Enterprise Wireless Network Components",
   "items": [
     {
-      "name": "Rack A",
-      "type": "Primary",
-      "color": {
-        "bg": "#FDEBD0",
-        "border": "#F5CBA7",
-        "icon": "#B9770E",
-        "text": "#7E5109",
-        "badge": "#F39C12"
-      },
-      "features": ["Voice Gateway", "CMS", "2 PBX", "16 PRI Lines"]
+      "title": "Wireless LAN Controller",
+      "desc": "Centralized management platform for Access Points, WLANs, RF optimization, security policies, and roaming services."
     },
     {
-      "name": "Rack B",
-      "type": "Secondary",
-      "color": {
-        "bg": "#D6EAF8",
-        "border": "#85C1E9",
-        "icon": "#1F618D",
-        "text": "#1B4F72",
-        "badge": "#3498DB"
-      },
-      "features": ["Voice Gateway", "2 PBX", "16 PRI Lines"]
+      "title": "Access Points",
+      "desc": "Provide wireless connectivity to clients and establish CAPWAP tunnels with the Wireless LAN Controller."
+    },
+    {
+      "title": "Core Switch",
+      "desc": "Provides Layer 3 connectivity between WLC, Access Points, and enterprise resources."
+    },
+    {
+      "title": "Distribution Switch",
+      "desc": "Aggregates access layer traffic and forwards wireless traffic toward the core network."
+    },
+    {
+      "title": "DHCP Server",
+      "desc": "Assigns IP addresses and network parameters to wireless clients and Access Points."
+    },
+    {
+      "title": "Authentication Server",
+      "desc": "RADIUS/AAA server used for 802.1X authentication and secure wireless access."
     }
   ]
 }

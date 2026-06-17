@@ -1,23 +1,23 @@
 {
-  "title": "Overview",
-  "subtitle": "Core Call Routing & Signaling Platform",
-  "description": "Cisco Unified Communications Manager (CUCM) is the central call-routing and signaling engine within Cisco Collaboration Architecture. It functions as an enterprise-grade IP PBX responsible for endpoint registration, call processing, dial-plan execution, session control, and communication policy enforcement across enterprise networks.",
+  "title": "Wireless LAN Controller (WLC)",
+  "subtitle": "Centralized Wireless Network Management Platform",
+  "description": "A Wireless LAN Controller (WLC) is a network device that centrally manages multiple Wireless Access Points (APs) across an enterprise Wi-Fi infrastructure. It provides centralized configuration, security enforcement, authentication, roaming, policy control, monitoring, and high availability for wireless networks.",
   "points": [
     {
-      "title": "Call Processing & Routing",
-      "desc": "Routes calls using Route Patterns, Route Lists and Route Groups across internal networks, remote sites and PSTN gateways."
+      "title": "Centralized AP Management",
+      "desc": "Configure and manage hundreds of Access Points from a single controller."
     },
     {
-      "title": "Device Management",
-      "desc": "Provides phone configuration, firmware distribution and TFTP services for endpoint provisioning."
+      "title": "Security & Authentication",
+      "desc": "Integrates with WPA2, WPA3, 802.1X, RADIUS and AAA services."
     },
     {
-      "title": "Enterprise Features",
-      "desc": "Supports call forwarding, transfer, hold, shared lines and extension mobility."
+      "title": "Roaming & Mobility",
+      "desc": "Provides seamless client roaming between Access Points."
     },
     {
       "title": "High Availability",
-      "desc": "Uses Publisher-Subscriber architecture to ensure resiliency, scalability and continuous call processing."
+      "desc": "Supports Active/Standby redundancy for uninterrupted wireless services."
     }
   ]
 }

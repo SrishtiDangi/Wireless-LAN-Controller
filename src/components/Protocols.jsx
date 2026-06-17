@@ -5,11 +5,6 @@ import Reveal from "./Reveal";
 function Protocols() {
   const [data, setData] = useState(null);
 
-  const iconMap = {
-    network: <FaNetworkWired size={28} />,
-  };
-
-  // ✅ FETCH FROM BACKEND
   useEffect(() => {
     fetch("http://localhost:5000/api/protocols")
       .then((res) => res.json())
@@ -27,8 +22,7 @@ function Protocols() {
 
   return (
     <Reveal>
-      <section style={{ padding: "60px 0" }} id="protocols">
-
+      <section id="protocols" style={{ padding: "70px 0" }}>
         {/* HEADER */}
         <div
           style={{
@@ -36,77 +30,95 @@ function Protocols() {
             justifyContent: "center",
             alignItems: "center",
             gap: "12px",
-            marginBottom: "35px",
+            marginBottom: "15px",
             color: "#2C3E50",
           }}
         >
-          {iconMap[data.icon]}
-          <h2 style={{ fontSize: "26px", fontWeight: "900" }}>
+          <FaNetworkWired size={28} />
+
+          <h2
+            style={{
+              fontSize: "26px",
+              fontWeight: "900",
+              margin: 0,
+            }}
+          >
             {data.title}
           </h2>
         </div>
 
-        {/* TABLE CARD */}
-        <div
+        <p
           style={{
-            maxWidth: "950px",
-            margin: "0 auto",
-            alignItems: "center",
-            alignContent:"center",
-            background: "#fff",
-            borderRadius: "18px",
-            overflow: "hidden",
-            boxShadow: "0 12px 25px rgba(0,0,0,0.08)",
-            border: `2px solid ${data.borderColor}`,
+            textAlign: "center",
+            color: "#5D6D7E",
+            marginBottom: "40px",
           }}
         >
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          {data.subtitle}
+        </p>
 
-            {/* HEADER ROW */}
-            <thead>
-              <tr style={{ background: data.headerColor }}>
-                {data.columns.map((col, i) => (
-                  <th key={i} style={header}>
-                    {col}
-                  </th>
-                ))}
-              </tr>
-            </thead>
+        {/* PROTOCOL CARDS */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(280px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          {data.protocols.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                background: item.color,
+                border: `2px solid ${item.border}`,
+                borderRadius: "18px",
+                padding: "20px",
+                boxShadow:
+                  "0 10px 20px rgba(0,0,0,0.08)",
+                transition: "0.3s ease",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform =
+                  "translateY(-8px)";
+                e.currentTarget.style.boxShadow =
+                  "0 18px 35px rgba(0,0,0,0.15)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform =
+                  "translateY(0px)";
+                e.currentTarget.style.boxShadow =
+                  "0 10px 20px rgba(0,0,0,0.08)";
+              }}
+            >
+              <h3
+                style={{
+                  color: "#2C3E50",
+                  fontSize: "18px",
+                  fontWeight: "800",
+                  marginBottom: "12px",
+                }}
+              >
+                {item.name}
+              </h3>
 
-            {/* BODY ROWS */}
-            <tbody>
-              {data.rows.map((item, i) => (
-                <tr
-                  key={i}
-                  style={{
-                    background: i % 2 === 0 ? "#fff" : "#F9FBFD",
-                  }}
-                >
-                  <td style={cell}>{item.protocol}</td>
-                  <td style={cell}>{item.type}</td>
-                  <td style={cell}>{item.purpose}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+              <p
+                style={{
+                  color: "#555",
+                  fontSize: "14px",
+                  lineHeight: "1.6",
+                  margin: 0,
+                }}
+              >
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </Reveal>
   );
 }
-
-const header = {
-  padding: "16px",
-  textAlign: "center",
-  color: "#2C3E50",
-  fontWeight: "800",
-};
-
-const cell = {
-  padding: "15px",
-  borderBottom: "1px solid #EAEAEA",
-  color: "#555",
-  fontSize: "14px",
-};
 
 export default Protocols;
