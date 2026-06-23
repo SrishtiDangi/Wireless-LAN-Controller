@@ -1,40 +1,85 @@
 {
   "title": "CAPWAP AP Join Process",
+
   "steps": [
     {
       "icon": "ap",
       "title": "AP Boot",
       "desc": "Access Point powers on and initializes hardware.",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "details": [
+        "AP performs Power-On Self Test (POST).",
+        "Hardware components are initialized.",
+        "Wireless radios are enabled.",
+        "Bootloader loads IOS image.",
+        "System prepares for network connectivity."
+      ]
     },
+
     {
       "icon": "discover",
       "title": "WLC Discovery",
       "desc": "AP discovers Wireless LAN Controller using DHCP, DNS or Broadcast.",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "details": [
+        "DHCP Option 43 can provide controller IP.",
+        "DNS lookup for CISCO-CAPWAP-CONTROLLER.",
+        "Layer 2 broadcast discovery.",
+        "Previously configured controller addresses checked.",
+        "AP builds candidate controller list."
+      ]
     },
+
     {
       "icon": "join",
       "title": "CAPWAP Join",
       "desc": "AP establishes CAPWAP tunnel with WLC.",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "details": [
+        "DTLS security session created.",
+        "Certificates validated.",
+        "Control tunnel established.",
+        "AP authenticates with controller.",
+        "Controller accepts AP join request."
+      ]
     },
+
     {
       "icon": "download",
       "title": "Config Download",
       "desc": "Controller pushes WLAN and RF configuration.",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "details": [
+        "SSID configuration downloaded.",
+        "RF parameters applied.",
+        "Security policies synchronized.",
+        "QoS profiles transferred.",
+        "Operational settings activated."
+      ]
     },
+
     {
       "icon": "ready",
       "title": "AP Operational",
       "desc": "AP starts serving wireless clients.",
       "color": "#FDEBD0",
-      "border": "#D4AC0D"
+      "border": "#D4AC0D",
+
+      "details": [
+        "SSID begins broadcasting.",
+        "Clients can associate.",
+        "Authentication services enabled.",
+        "Traffic forwarded through CAPWAP.",
+        "AP enters production state."
+      ]
     }
   ]
 }

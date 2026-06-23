@@ -4,14 +4,41 @@
 
   "controller": {
     "title": "Wireless LAN Controller (WLC)",
-    "desc": "Central brain of the wireless network managing Access Points, WLANs, security policies and client mobility."
+    "desc": "Central brain of the wireless network managing Access Points, WLANs, security policies and client mobility.",
+
+    "details": [
+      "Centralized configuration and management of Access Points.",
+      "Maintains WLAN profiles and security policies.",
+      "Handles client authentication and roaming.",
+      "Provides RF optimization and channel management.",
+      "Supports mobility and high availability services."
+    ],
+
+    "protocols": [
+      "CAPWAP",
+      "802.11",
+      "RADIUS",
+      "DHCP"
+    ]
   },
 
   "components": [
-    "CAPWAP Control",
-    "CAPWAP Data",
-    "RF Management",
-    "Mobility Services"
+    {
+      "title": "CAPWAP Control",
+      "desc": "Manages AP registration, configuration and monitoring."
+    },
+    {
+      "title": "CAPWAP Data",
+      "desc": "Carries wireless client traffic through the controller."
+    },
+    {
+      "title": "RF Management",
+      "desc": "Optimizes channels, power levels and interference handling."
+    },
+    {
+      "title": "Mobility Services",
+      "desc": "Supports roaming and client session continuity."
+    }
   ],
 
   "devices": [
@@ -19,25 +46,56 @@
       "title": "Access Point 1",
       "desc": "Provides wireless coverage and forwards traffic through CAPWAP.",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "details": [
+        "Broadcasts SSIDs.",
+        "Handles client association.",
+        "Sends traffic to WLC using CAPWAP.",
+        "Applies RF settings received from WLC."
+      ]
     },
+
     {
       "title": "Access Point 2",
       "desc": "Extends wireless coverage while centrally managed by the WLC.",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "details": [
+        "Provides additional coverage area.",
+        "Supports client roaming.",
+        "Receives centralized policies from WLC.",
+        "Maintains CAPWAP connectivity."
+      ]
     },
+
     {
       "title": "Wireless Clients",
       "desc": "Laptops, phones and tablets connecting through enterprise WLANs.",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "details": [
+        "Authenticate using WLAN security.",
+        "Receive IP addresses via DHCP.",
+        "Roam between APs without session loss.",
+        "Access enterprise applications."
+      ]
     },
+
     {
       "title": "Mobility Group",
       "desc": "Supports seamless roaming between access points and controllers.",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "details": [
+        "Shares client information between controllers.",
+        "Maintains session persistence.",
+        "Supports inter-controller roaming.",
+        "Reduces client reconnection delays."
+      ]
     }
   ]
 }

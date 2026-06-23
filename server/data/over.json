@@ -1,23 +1,60 @@
 {
   "title": "Wireless LAN Controller (WLC)",
   "subtitle": "Centralized Wireless Network Management Platform",
+
   "description": "A Wireless LAN Controller (WLC) is a network device that centrally manages multiple Wireless Access Points (APs) across an enterprise Wi-Fi infrastructure. It provides centralized configuration, security enforcement, authentication, roaming, policy control, monitoring, and high availability for wireless networks.",
+
   "points": [
     {
       "title": "Centralized AP Management",
-      "desc": "Configure and manage hundreds of Access Points from a single controller."
+      "desc": "Configure and manage hundreds of Access Points from a single controller.",
+
+      "details": [
+        "Provides centralized configuration of Access Points.",
+        "Reduces manual administration efforts.",
+        "Enables bulk software and firmware updates.",
+        "Maintains consistent WLAN settings across sites.",
+        "Simplifies monitoring and troubleshooting."
+      ]
     },
+
     {
       "title": "Security & Authentication",
-      "desc": "Integrates with WPA2, WPA3, 802.1X, RADIUS and AAA services."
+      "desc": "Integrates with WPA2, WPA3, 802.1X, RADIUS and AAA services.",
+
+      "details": [
+        "Supports WPA2 and WPA3 wireless security.",
+        "Integrates with RADIUS and AAA servers.",
+        "Provides 802.1X authentication services.",
+        "Enforces access control policies.",
+        "Protects wireless users from unauthorized access."
+      ]
     },
+
     {
       "title": "Roaming & Mobility",
-      "desc": "Provides seamless client roaming between Access Points."
+      "desc": "Provides seamless client roaming between Access Points.",
+
+      "details": [
+        "Allows users to move between APs without disconnecting.",
+        "Maintains active sessions during roaming.",
+        "Supports Layer 2 and Layer 3 roaming.",
+        "Improves voice and video application performance.",
+        "Enhances user mobility across enterprise networks."
+      ]
     },
+
     {
       "title": "High Availability",
-      "desc": "Supports Active/Standby redundancy for uninterrupted wireless services."
+      "desc": "Supports Active/Standby redundancy for uninterrupted wireless services.",
+
+      "details": [
+        "Provides controller redundancy.",
+        "Supports Stateful Switchover (SSO).",
+        "Minimizes downtime during failures.",
+        "Maintains AP and client connectivity.",
+        "Ensures continuous wireless network operation."
+      ]
     }
   ]
 }

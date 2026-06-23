@@ -8,35 +8,79 @@
       "desc": "Primary and secondary controllers provide failover protection during controller outages.",
       "icon": "server",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "details": [
+        "Primary and standby controllers operate together.",
+        "Backup controller takes control if primary fails.",
+        "Reduces downtime in enterprise WLANs.",
+        "Provides continuous AP management.",
+        "Improves overall network reliability."
+      ]
     },
+
     {
       "title": "Stateful Switchover (SSO)",
       "desc": "Maintains client sessions and AP connectivity during active controller failure.",
       "icon": "sync",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "details": [
+        "Active and standby controllers synchronize state information.",
+        "APs remain connected during failover.",
+        "Client sessions are preserved.",
+        "Authentication information remains intact.",
+        "Minimizes service interruption."
+      ]
     },
+
     {
       "title": "AP Failover",
       "desc": "Access Points automatically join a backup controller if the primary controller becomes unavailable.",
       "icon": "shield",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "details": [
+        "APs maintain secondary controller information.",
+        "Automatic discovery of backup WLC.",
+        "Re-establishes CAPWAP tunnel automatically.",
+        "Wireless coverage remains available.",
+        "Reduces administrative intervention."
+      ]
     },
+
     {
       "title": "Client Roaming Continuity",
       "desc": "Allows users to stay connected during controller failover events.",
       "icon": "globe",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "details": [
+        "Ongoing client sessions remain active.",
+        "Voice and video applications experience minimal disruption.",
+        "Supports enterprise mobility.",
+        "Maintains seamless user experience.",
+        "Critical applications continue functioning."
+      ]
     },
+
     {
       "title": "Mobility Groups",
       "desc": "Controllers share roaming and session information for uninterrupted service.",
       "icon": "database",
       "color": "#FDEBD0",
-      "border": "#D4AC0D"
+      "border": "#D4AC0D",
+
+      "details": [
+        "Controllers exchange client mobility information.",
+        "Supports inter-controller roaming.",
+        "Maintains session persistence.",
+        "Improves large-scale WLAN operation.",
+        "Provides seamless mobility services."
+      ]
     }
   ]
 }

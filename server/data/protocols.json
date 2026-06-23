@@ -7,42 +7,90 @@
       "name": "CAPWAP",
       "desc": "Control and Provisioning of Wireless Access Points. Used between Access Points and the Wireless LAN Controller.",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "details": [
+        "Creates secure tunnels between AP and WLC.",
+        "Separates control and data traffic.",
+        "Used for AP registration and management.",
+        "Supports centralized WLAN configuration.",
+        "Standard protocol for Cisco lightweight AP deployments."
+      ]
     },
 
     {
       "name": "IEEE 802.11",
       "desc": "Core wireless communication standard used for Wi-Fi connectivity between clients and access points.",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "details": [
+        "Defines wireless communication standards.",
+        "Supports 2.4 GHz, 5 GHz and 6 GHz bands.",
+        "Includes standards such as 802.11ac and 802.11ax.",
+        "Provides wireless connectivity for clients.",
+        "Forms the foundation of modern WLANs."
+      ]
     },
 
     {
       "name": "WPA2 / WPA3",
       "desc": "Provides wireless encryption, authentication and secure client access.",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "details": [
+        "Encrypts wireless traffic.",
+        "Prevents unauthorized access.",
+        "Supports enterprise authentication methods.",
+        "WPA3 offers stronger security than WPA2.",
+        "Protects user credentials and data."
+      ]
     },
 
     {
       "name": "RADIUS",
       "desc": "Used for centralized Authentication, Authorization and Accounting services.",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "details": [
+        "Provides AAA services.",
+        "Works with 802.1X authentication.",
+        "Integrates with enterprise identity systems.",
+        "Tracks user login activity.",
+        "Centralizes access control policies."
+      ]
     },
 
     {
       "name": "DHCP",
       "desc": "Assigns IP addresses and network parameters to wireless clients and access points.",
       "color": "#FDEBD0",
-      "border": "#D4AC0D"
+      "border": "#D4AC0D",
+
+      "details": [
+        "Automatically assigns IP addresses.",
+        "Provides subnet mask and gateway information.",
+        "Supports large wireless deployments.",
+        "Reduces manual configuration effort.",
+        "Essential for wireless client connectivity."
+      ]
     },
 
     {
       "name": "DNS",
       "desc": "Supports hostname resolution and WLC discovery mechanisms.",
       "color": "#FADBD8",
-      "border": "#E74C3C"
+      "border": "#E74C3C",
+
+      "details": [
+        "Resolves hostnames into IP addresses.",
+        "Supports WLC discovery using DNS records.",
+        "Improves network usability.",
+        "Used by wireless clients and controllers.",
+        "Reduces dependency on manual IP addressing."
+      ]
     }
   ]
 }

@@ -4,35 +4,91 @@
   "items": [
     {
       "title": "Client Cannot Join WLAN",
-      "desc": "Verify SSID broadcast, WLAN status, AP availability, and client authentication process."
+      "desc": "Verify SSID broadcast, WLAN status, AP availability, and client authentication process.",
+      "details": [
+        "Check if SSID is enabled on WLC",
+        "Verify AP is joined and broadcasting SSID",
+        "Ensure correct security settings (WPA2/WPA3)",
+        "Validate client compatibility",
+        "Check RF coverage in area"
+      ]
     },
     {
       "title": "Authentication Failure",
-      "desc": "Check RADIUS reachability, AAA configuration, shared secrets, and user credentials."
+      "desc": "Check RADIUS reachability, AAA configuration, shared secrets, and user credentials.",
+      "details": [
+        "Verify RADIUS server IP and port",
+        "Check shared secret mismatch",
+        "Confirm AAA method list configuration",
+        "Test user credentials manually",
+        "Review authentication logs on WLC"
+      ]
     },
     {
       "title": "DHCP Address Issues",
-      "desc": "Confirm DHCP scope availability, VLAN mappings, helper addresses, and IP lease assignment."
+      "desc": "Confirm DHCP scope availability, VLAN mappings, helper addresses, and IP lease assignment.",
+      "details": [
+        "Check DHCP pool exhaustion",
+        "Verify VLAN tagging on switch",
+        "Ensure DHCP relay (ip helper-address) is set",
+        "Test DHCP server reachability",
+        "Review client IP assignment logs"
+      ]
     },
     {
       "title": "Poor Wireless Coverage",
-      "desc": "Review AP placement, signal strength, interference levels, and RF profiles."
+      "desc": "Review AP placement, signal strength, interference levels, and RF profiles.",
+      "details": [
+        "Measure RSSI and SNR values",
+        "Check channel overlap/interference",
+        "Reposition APs for better coverage",
+        "Adjust transmit power settings",
+        "Run RF heatmap analysis"
+      ]
     },
     {
       "title": "Client Roaming Problems",
-      "desc": "Verify mobility groups, AP neighbor relationships, and fast roaming configuration."
+      "desc": "Verify mobility groups, AP neighbor relationships, and fast roaming configuration.",
+      "details": [
+        "Check mobility group configuration",
+        "Enable 802.11k/v/r if supported",
+        "Verify AP neighbor discovery",
+        "Test roaming threshold settings",
+        "Analyze roaming logs"
+      ]
     },
     {
       "title": "High Latency or Packet Loss",
-      "desc": "Analyze channel utilization, interference sources, QoS policies, and uplink connectivity."
+      "desc": "Analyze channel utilization, interference sources, QoS policies, and uplink connectivity.",
+      "details": [
+        "Check channel utilization %",
+        "Inspect QoS policies",
+        "Verify uplink bandwidth",
+        "Detect RF interference sources",
+        "Run ping and packet capture tests"
+      ]
     },
     {
       "title": "CAPWAP Join Failure",
-      "desc": "Check controller discovery, DNS resolution, DHCP Option 43, and CAPWAP connectivity."
+      "desc": "Check controller discovery, DNS resolution, DHCP Option 43, and CAPWAP connectivity.",
+      "details": [
+        "Verify DNS resolution for WLC",
+        "Check DHCP Option 43 configuration",
+        "Ensure AP can reach WLC IP",
+        "Check CAPWAP ports UDP 5246/5247",
+        "Review AP join logs"
+      ]
     },
     {
       "title": "Controller Reachability Issues",
-      "desc": "Verify routing paths, VLAN configuration, firewall rules, and management interfaces."
+      "desc": "Verify routing paths, VLAN configuration, firewall rules, and management interfaces.",
+      "details": [
+        "Check routing table",
+        "Verify management VLAN",
+        "Inspect firewall ACLs",
+        "Ping WLC management IP",
+        "Check interface status on controller"
+      ]
     }
   ]
 }

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 
 function Architecture() {
   const [architecture, setArchitecture] = useState(null);
-
+  const [selectedDevice, setSelectedDevice] = useState(null);
+  const [showController, setShowController] = useState(false);
   useEffect(() => {
     fetch("http://localhost:5000/api/architecture")
       .then((res) => res.json())
@@ -69,6 +70,7 @@ function Architecture() {
       {/* WLC */}
       <Reveal>
         <div
+          onClick={() => setShowController(true)}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -140,7 +142,21 @@ function Architecture() {
                   fontWeight: "700",
                 }}
               >
-                {item}
+                <>
+                  <div style={{ fontWeight: "800" }}>
+                    {item.title}
+                  </div>
+
+                  <div
+                    style={{
+                      fontSize: "12px",
+                      marginTop: "6px",
+                      fontWeight: "500"
+                    }}
+                  >
+                    {item.desc}
+                  </div>
+                </>
               </div>
             )
           )}
@@ -163,9 +179,23 @@ function Architecture() {
             (device, index) => (
               <div
                 key={index}
+                onClick={() => setSelectedDevice(device)}
+
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-8px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 18px 35px rgba(0,0,0,0.15)";
+                }}
+
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0px)";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 20px rgba(0,0,0,0.08)";
+                }}
+
                 style={{
-                  background: device?.color,
-                  border: `2px solid ${device?.border}`,
+                  background: device.color,
+                  border: `2px solid ${device.border}`,
                   borderRadius: "20px",
                   padding: "20px",
                   textAlign: "center",
@@ -195,6 +225,189 @@ function Architecture() {
           )}
         </div>
       </Reveal>
+      {selectedDevice && (
+
+        <div
+          onClick={() => setSelectedDevice(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "500px",
+              maxWidth: "90%",
+              background: "#fff",
+              padding: "30px",
+              borderRadius: "24px",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
+            }}
+          >
+            <h2
+              style={{
+                color: "#2C3E50",
+                marginBottom: "15px",
+              }}
+            >
+              {selectedDevice.title}
+            </h2>
+
+            <ul
+              style={{
+                color: "#555",
+                lineHeight: "1.8",
+                paddingLeft: "20px",
+                marginTop: "15px",
+              }}
+            >
+              {selectedDevice.details?.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+
+            <button
+              onClick={() => setSelectedDevice(null)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "10px",
+                background: "#2C3E50",
+                color: "white",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      {showController && (
+        <div
+          onClick={() => setShowController(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.55)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+            backdropFilter: "blur(6px)",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "650px",
+              maxWidth: "92%",
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "30px",
+              boxShadow: "0 20px 60px rgba(0,0,0,0.25)",
+            }}
+          >
+            <h2
+              style={{
+                color: "#2C3E50",
+                marginBottom: "12px",
+              }}
+            >
+              {architecture.controller.title}
+            </h2>
+
+            <p
+              style={{
+                color: "#555",
+                lineHeight: "1.7",
+                marginBottom: "20px",
+              }}
+            >
+              {architecture.controller.desc}
+            </p>
+
+            <h3
+              style={{
+                color: "#2C3E50",
+                marginBottom: "10px",
+              }}
+            >
+              Key Functions
+            </h3>
+
+            <ul
+              style={{
+                lineHeight: "1.8",
+                color: "#555",
+                paddingLeft: "20px",
+              }}
+            >
+              {architecture.controller.details?.map(
+                (item, index) => (
+                  <li key={index}>{item}</li>
+                )
+              )}
+            </ul>
+
+            <h3
+              style={{
+                marginTop: "20px",
+                color: "#2C3E50",
+              }}
+            >
+              Protocols
+            </h3>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+                marginTop: "10px",
+              }}
+            >
+              {architecture.controller.protocols?.map(
+                (protocol, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      background: "#E8DFF5",
+                      border: "1px solid #C39BD3",
+                      padding: "8px 14px",
+                      borderRadius: "999px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {protocol}
+                  </div>
+                )
+              )}
+            </div>
+
+            <button
+              onClick={() => setShowController(false)}
+              style={{
+                marginTop: "25px",
+                padding: "10px 22px",
+                border: "none",
+                borderRadius: "12px",
+                background: "#2C3E50",
+                color: "white",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <style>
         {`

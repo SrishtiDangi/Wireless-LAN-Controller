@@ -1,48 +1,135 @@
 {
   "title": "Access Point Join Process",
-  "subtitle": "How a Cisco Lightweight Access Point joins a Wireless LAN Controller",
+  "subtitle": "Complete lifecycle of a Cisco Lightweight Access Point joining a Wireless LAN Controller",
+
   "steps": [
     {
       "title": "Boot Process",
-      "desc": "The Access Point powers on and loads its operating system.",
       "icon": "power",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "desc": "The Access Point powers on and initializes hardware components.",
+
+      "details": [
+        "Performs POST (Power-On Self Test).",
+        "Loads Cisco IOS image from flash memory.",
+        "Initializes radios, Ethernet interfaces and system services.",
+        "Verifies hardware integrity before network communication begins."
+      ],
+
+      "commands": [
+        "show version",
+        "show inventory"
+      ]
     },
+
     {
-      "title": "IP Address",
-      "desc": "The AP obtains an IP address from the DHCP server.",
+      "title": "IP Address Acquisition",
       "icon": "ip",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "desc": "The AP obtains Layer 3 connectivity through DHCP.",
+
+      "details": [
+        "Sends DHCP Discover message.",
+        "Receives IP address from DHCP server.",
+        "Obtains subnet mask and default gateway.",
+        "May receive Option 43 information containing WLC addresses."
+      ],
+
+      "commands": [
+        "show ip interface brief",
+        "show dhcp lease"
+      ]
     },
+
     {
       "title": "WLC Discovery",
-      "desc": "The AP discovers available Wireless LAN Controllers using DHCP, DNS or Broadcast.",
       "icon": "discovery",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "desc": "The AP searches for available Wireless LAN Controllers.",
+
+      "details": [
+        "Discovers WLC through DHCP Option 43.",
+        "Uses DNS lookup for CISCO-CAPWAP-CONTROLLER.",
+        "Checks previously stored controller addresses.",
+        "Can discover controllers through Layer 2 broadcast."
+      ],
+
+      "commands": [
+        "show capwap client config",
+        "show capwap ip config"
+      ]
     },
+
     {
       "title": "CAPWAP Join",
-      "desc": "The AP establishes a CAPWAP tunnel with the selected controller.",
       "icon": "capwap",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "desc": "A secure CAPWAP tunnel is established between AP and WLC.",
+
+      "details": [
+        "AP sends Discovery Request.",
+        "Controller responds with Discovery Response.",
+        "DTLS security validation occurs.",
+        "CAPWAP control tunnel is established.",
+        "AP officially joins the controller."
+      ],
+
+      "commands": [
+        "show capwap client state",
+        "show ap join stats"
+      ]
     },
+
     {
       "title": "Configuration Download",
-      "desc": "The AP downloads WLAN, RF and policy configurations from the controller.",
       "icon": "download",
       "color": "#FDEDEC",
-      "border": "#F1948A"
+      "border": "#F1948A",
+
+      "desc": "The AP downloads operational configuration from the controller.",
+
+      "details": [
+        "Downloads WLAN profiles.",
+        "Receives RF parameters and power settings.",
+        "Applies security policies.",
+        "Receives QoS and mobility configurations.",
+        "Synchronizes software image if required."
+      ],
+
+      "commands": [
+        "show wlan summary",
+        "show ap config general"
+      ]
     },
+
     {
       "title": "Operational State",
-      "desc": "The AP becomes active and starts serving wireless clients.",
       "icon": "success",
       "color": "#FCF3CF",
-      "border": "#F7DC6F"
+      "border": "#F7DC6F",
+
+      "desc": "The AP becomes fully operational and serves wireless clients.",
+
+      "details": [
+        "Begins beacon transmission.",
+        "Accepts client association requests.",
+        "Provides WLAN services.",
+        "Participates in roaming and mobility operations.",
+        "Continuously exchanges CAPWAP keepalive messages."
+      ],
+
+      "commands": [
+        "show ap summary",
+        "show client summary"
+      ]
     }
   ]
 }

@@ -8,7 +8,15 @@
       "desc": "Centralized platform for WLAN management, security and RF optimization.",
       "icon": "controller",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "details": [
+        "Centralized management of all Access Points.",
+        "Maintains WLAN and SSID configurations.",
+        "Handles client authentication requests.",
+        "Performs RF optimization and channel planning.",
+        "Supports seamless roaming across the wireless network."
+      ]
     },
 
     {
@@ -16,7 +24,15 @@
       "desc": "Provide wireless coverage and connect clients to the network.",
       "icon": "ap",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "details": [
+        "Broadcast wireless SSIDs.",
+        "Connect wireless clients to enterprise resources.",
+        "Forward management traffic using CAPWAP.",
+        "Apply policies received from the controller.",
+        "Monitor RF conditions and client performance."
+      ]
     },
 
     {
@@ -24,7 +40,15 @@
       "desc": "Laptops, smartphones and tablets accessing WLAN services.",
       "icon": "client",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "details": [
+        "Authenticate through enterprise WLAN security.",
+        "Receive IP addresses through DHCP.",
+        "Access internal and external network resources.",
+        "Support seamless roaming between APs.",
+        "Utilize voice, video and data applications."
+      ]
     },
 
     {
@@ -32,7 +56,15 @@
       "desc": "Handles authentication, authorization and accounting services.",
       "icon": "security",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "details": [
+        "Authenticates users and devices.",
+        "Applies authorization policies.",
+        "Maintains accounting and session records.",
+        "Supports 802.1X authentication.",
+        "Integrates with Active Directory and LDAP."
+      ]
     },
 
     {
@@ -40,7 +72,15 @@
       "desc": "Switches and routers providing connectivity between APs and WLC.",
       "icon": "network",
       "color": "#FDEBD0",
-      "border": "#D4AC0D"
+      "border": "#D4AC0D",
+
+      "details": [
+        "Provides Layer 2 and Layer 3 connectivity.",
+        "Carries CAPWAP traffic between APs and WLC.",
+        "Supports VLAN segmentation.",
+        "Delivers DHCP and routing services.",
+        "Ensures reliable enterprise network communication."
+      ]
     },
 
     {
@@ -48,7 +88,15 @@
       "desc": "Provides secure internet access for guest users and visitors.",
       "icon": "guest",
       "color": "#FADBD8",
-      "border": "#E74C3C"
+      "border": "#E74C3C",
+
+      "details": [
+        "Provides isolated guest network access.",
+        "Supports captive portal authentication.",
+        "Applies guest-specific security policies.",
+        "Restricts access to internal enterprise resources.",
+        "Tracks guest sessions and internet usage."
+      ]
     }
   ]
 }

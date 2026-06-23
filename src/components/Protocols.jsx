@@ -4,6 +4,7 @@ import Reveal from "./Reveal";
 
 function Protocols() {
   const [data, setData] = useState(null);
+  const [selectedProtocol, setSelectedProtocol] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/protocols")
@@ -69,6 +70,7 @@ function Protocols() {
           {data.protocols.map((item, index) => (
             <div
               key={index}
+              onClick={() => setSelectedProtocol(item)}
               style={{
                 background: item.color,
                 border: `2px solid ${item.border}`,
@@ -116,6 +118,77 @@ function Protocols() {
             </div>
           ))}
         </div>
+        {selectedProtocol && (
+          <div
+            onClick={() => setSelectedProtocol(null)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              background: "rgba(0,0,0,0.55)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                width: "600px",
+                maxWidth: "92%",
+                background: "#fff",
+                borderRadius: "24px",
+                padding: "30px",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+              }}
+            >
+              <h2
+                style={{
+                  color: "#2C3E50",
+                  marginBottom: "12px",
+                }}
+              >
+                {selectedProtocol.name}
+              </h2>
+
+              <p
+                style={{
+                  color: "#666",
+                  marginBottom: "20px",
+                }}
+              >
+                {selectedProtocol.desc}
+              </p>
+
+              <ul
+                style={{
+                  lineHeight: "1.9",
+                  color: "#444",
+                  paddingLeft: "22px",
+                }}
+              >
+                {selectedProtocol.details?.map((detail, index) => (
+                  <li key={index}>{detail}</li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => setSelectedProtocol(null)}
+                style={{
+                  marginTop: "20px",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "10px",
+                  background: "#2C3E50",
+                  color: "#fff",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </section>
     </Reveal>
   );

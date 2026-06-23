@@ -31,6 +31,7 @@ import DiagnosticFieldGuide from "./components/DiagnosticFieldGuide";
 import RackOverview from "./components/RackOverview";
 
 import Footer from "./components/Footer";
+import Security from "./components/Security";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
       {/* ENTERPRISE FEATURES */}
       <Mobility />
       <MediaResources />
+      <Security/>
       <HighAvailibility />
       <Advantages />
 

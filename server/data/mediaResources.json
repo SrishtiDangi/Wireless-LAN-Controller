@@ -8,35 +8,74 @@
       "desc": "Prioritizes critical applications such as voice and video traffic.",
       "icon": "shield",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+      "details": [
+        "Prioritizes delay-sensitive traffic.",
+        "Reduces latency and jitter.",
+        "Improves VoIP call quality.",
+        "Supports video conferencing.",
+        "Prevents congestion during peak usage."
+      ]
     },
+
     {
       "title": "Voice over Wi-Fi",
       "desc": "Supports wireless voice communications with low latency and packet loss.",
       "icon": "globe",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+      "details": [
+        "Enables wireless voice calls.",
+        "Supports enterprise mobility.",
+        "Uses QoS for voice prioritization.",
+        "Provides seamless roaming between APs.",
+        "Reduces dependency on wired phones."
+      ]
     },
+
     {
       "title": "Video Optimization",
       "desc": "Enhances streaming and conferencing performance over WLANs.",
       "icon": "server",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+      "details": [
+        "Optimizes bandwidth for video traffic.",
+        "Improves streaming quality.",
+        "Supports HD conferencing.",
+        "Minimizes buffering delays.",
+        "Maintains stable video sessions."
+      ]
     },
+
     {
       "title": "Traffic Classification",
       "desc": "Identifies and prioritizes application traffic types automatically.",
       "icon": "database",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+      "details": [
+        "Recognizes application types.",
+        "Classifies packets automatically.",
+        "Applies traffic policies.",
+        "Improves network efficiency.",
+        "Supports dynamic QoS decisions."
+      ]
     },
+
     {
       "title": "Bandwidth Management",
       "desc": "Allocates wireless resources efficiently for real-time services.",
       "icon": "sync",
       "color": "#FDEBD0",
-      "border": "#D4AC0D"
+      "border": "#D4AC0D",
+      "details": [
+        "Controls bandwidth utilization.",
+        "Prevents resource starvation.",
+        "Balances client traffic loads.",
+        "Improves application performance.",
+        "Supports high-density wireless deployments."
+      ]
     }
   ]
 }

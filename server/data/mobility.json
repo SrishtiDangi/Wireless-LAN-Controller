@@ -8,7 +8,15 @@
       "desc": "Clients move between access points within the same VLAN without changing IP addresses.",
       "icon": "wifi",
       "color": "#D6EAF8",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+
+      "details": [
+        "Client keeps the same IP address while roaming.",
+        "Occurs within the same VLAN and subnet.",
+        "Provides fast transition between access points.",
+        "No DHCP renewal is required.",
+        "Common in campus wireless deployments."
+      ]
     },
 
     {
@@ -16,7 +24,15 @@
       "desc": "Maintains client connectivity when moving across different VLANs and subnets.",
       "icon": "network",
       "color": "#E8DFF5",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+
+      "details": [
+        "Allows roaming across different subnets.",
+        "Client sessions remain active.",
+        "Uses mobility tunnels between controllers.",
+        "Prevents application interruptions.",
+        "Supports enterprise-wide wireless coverage."
+      ]
     },
 
     {
@@ -24,7 +40,15 @@
       "desc": "Controllers exchange client information to support seamless roaming across the wireless network.",
       "icon": "group",
       "color": "#D5F5E3",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+
+      "details": [
+        "Controllers share client state information.",
+        "Supports inter-controller roaming.",
+        "Maintains user connectivity.",
+        "Improves roaming performance.",
+        "Reduces reauthentication delays."
+      ]
     },
 
     {
@@ -32,7 +56,15 @@
       "desc": "802.11r and related technologies reduce authentication delays during roaming.",
       "icon": "security",
       "color": "#FBE5D6",
-      "border": "#E8B89C"
+      "border": "#E8B89C",
+
+      "details": [
+        "Uses 802.11r Fast Transition.",
+        "Reduces roaming authentication time.",
+        "Improves VoWiFi performance.",
+        "Minimizes packet loss during movement.",
+        "Enhances user experience for real-time applications."
+      ]
     },
 
     {
@@ -40,7 +72,15 @@
       "desc": "Allows guest users to move across wireless coverage areas while maintaining sessions.",
       "icon": "globe",
       "color": "#FDEBD0",
-      "border": "#D4AC0D"
+      "border": "#D4AC0D",
+
+      "details": [
+        "Maintains guest connectivity during roaming.",
+        "Supports centralized guest access.",
+        "Provides uninterrupted browsing sessions.",
+        "Improves visitor experience.",
+        "Works across multiple access points."
+      ]
     }
   ]
 }

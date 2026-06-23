@@ -4,27 +4,74 @@
   "items": [
     {
       "title": "Wireless LAN Controller",
-      "desc": "Centralized management platform for Access Points, WLANs, RF optimization, security policies, and roaming services."
+      "desc": "Centralized management platform for Access Points, WLANs, RF optimization, security policies, and roaming services.",
+      "details": [
+        "Centralized management of all Access Points.",
+        "Handles WLAN creation and policy enforcement.",
+        "Provides RF optimization and channel management.",
+        "Supports seamless client roaming.",
+        "Integrates with security and AAA services."
+      ]
     },
+
     {
       "title": "Access Points",
-      "desc": "Provide wireless connectivity to clients and establish CAPWAP tunnels with the Wireless LAN Controller."
+      "desc": "Provide wireless connectivity to clients and establish CAPWAP tunnels with the Wireless LAN Controller.",
+      "details": [
+        "Provide Wi-Fi coverage to end users.",
+        "Connect wireless clients to the network.",
+        "Join WLC through CAPWAP protocol.",
+        "Broadcast configured SSIDs.",
+        "Handle client traffic forwarding."
+      ]
     },
+
     {
       "title": "Core Switch",
-      "desc": "Provides Layer 3 connectivity between WLC, Access Points, and enterprise resources."
+      "desc": "Provides Layer 3 connectivity between WLC, Access Points, and enterprise resources.",
+      "details": [
+        "Acts as the backbone of the network.",
+        "Performs high-speed packet forwarding.",
+        "Provides routing between VLANs.",
+        "Connects controllers to enterprise services.",
+        "Ensures resilient network connectivity."
+      ]
     },
+
     {
       "title": "Distribution Switch",
-      "desc": "Aggregates access layer traffic and forwards wireless traffic toward the core network."
+      "desc": "Aggregates access layer traffic and forwards wireless traffic toward the core network.",
+      "details": [
+        "Aggregates multiple access switches.",
+        "Applies network policies.",
+        "Provides traffic filtering.",
+        "Improves network scalability.",
+        "Forwards traffic to the core layer."
+      ]
     },
+
     {
       "title": "DHCP Server",
-      "desc": "Assigns IP addresses and network parameters to wireless clients and Access Points."
+      "desc": "Assigns IP addresses and network parameters to wireless clients and Access Points.",
+      "details": [
+        "Automatically assigns IP addresses.",
+        "Provides subnet mask and gateway information.",
+        "Supports AP boot process.",
+        "Can provide WLC discovery options.",
+        "Reduces manual configuration effort."
+      ]
     },
+
     {
       "title": "Authentication Server",
-      "desc": "RADIUS/AAA server used for 802.1X authentication and secure wireless access."
+      "desc": "RADIUS/AAA server used for 802.1X authentication and secure wireless access.",
+      "details": [
+        "Authenticates wireless users.",
+        "Supports 802.1X authentication.",
+        "Works with RADIUS protocol.",
+        "Provides authorization services.",
+        "Maintains accounting records."
+      ]
     }
   ]
 }

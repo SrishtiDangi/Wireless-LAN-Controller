@@ -1,15 +1,25 @@
 import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
-import { FaLock, FaUserShield, FaKey, FaDatabase } from "react-icons/fa";
+import {
+  FaLock,
+  FaUserShield,
+  FaKey,
+  FaDatabase,
+  FaServer,
+  FaNetworkWired
+} from "react-icons/fa";
 
 function Security() {
   const [data, setData] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const iconMap = {
     lock: <FaLock size={28} />,
     shield: <FaUserShield size={28} />,
     key: <FaKey size={28} />,
     database: <FaDatabase size={28} />,
+    server: <FaServer size={28} />,
+    network: <FaNetworkWired size={28} />,
   };
 
   // ✅ FETCH BACKEND
@@ -75,6 +85,7 @@ function Security() {
         {data.items.map((item, i) => (
           <Reveal key={i}>
             <div
+              onClick={() => setSelectedItem(item)}
               style={{
                 background: item.color,
                 borderRadius: "18px",
@@ -124,6 +135,78 @@ function Security() {
           </Reveal>
         ))}
       </div>
+      {selectedItem && (
+        <div
+          onClick={() => setSelectedItem(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.55)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "600px",
+              maxWidth: "92%",
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "30px",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+            }}
+          >
+            <h2
+              style={{
+                color: "#2C3E50",
+                marginBottom: "12px",
+              }}
+            >
+              {selectedItem.title}
+            </h2>
+
+            <p
+              style={{
+                color: "#666",
+                marginBottom: "20px",
+              }}
+            >
+              {selectedItem.desc}
+            </p>
+
+            <ul
+              style={{
+                lineHeight: "1.9",
+                color: "#444",
+                paddingLeft: "22px",
+              }}
+            >
+              {selectedItem.details?.map((detail, index) => (
+                <li key={index}>{detail}</li>
+              ))}
+            </ul>
+
+            <button
+              onClick={() => setSelectedItem(null)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "10px",
+                background: "#2C3E50",
+                color: "#fff",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+      
     </section>
   );
 }

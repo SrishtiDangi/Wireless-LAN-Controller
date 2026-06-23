@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 
 function CAPWAP() {
   const [data, setData] = useState(null);
-
+  const [selectedStep, setSelectedStep] = useState(null);
   useEffect(() => {
     fetch("http://localhost:5000/api/capwap")
       .then((res) => res.json())
@@ -65,6 +65,7 @@ function CAPWAP() {
           {data.steps.map((step, index) => (
             <div
               key={index}
+              onClick={() => setSelectedStep(step)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -142,6 +143,78 @@ function CAPWAP() {
             </div>
           ))}
         </div>
+        {selectedStep && (
+          <div
+            onClick={() => setSelectedStep(null)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              background: "rgba(0,0,0,0.55)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                width: "600px",
+                maxWidth: "90%",
+                background:
+                  "linear-gradient(135deg,#ffffff,#f8fafc)",
+                borderRadius: "24px",
+                padding: "30px",
+                boxShadow:
+                  "0 25px 60px rgba(0,0,0,0.25)",
+              }}
+            >
+              <h2
+                style={{
+                  color: "#2C3E50",
+                  marginBottom: "15px",
+                }}
+              >
+                {selectedStep.title}
+              </h2>
+
+              <p
+                style={{
+                  color: "#64748B",
+                  marginBottom: "20px",
+                }}
+              >
+                {selectedStep.desc}
+              </p>
+
+              <ul
+                style={{
+                  lineHeight: "1.9",
+                  color: "#334155",
+                }}
+              >
+                {selectedStep.details?.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => setSelectedStep(null)}
+                style={{
+                  marginTop: "20px",
+                  padding: "10px 18px",
+                  border: "none",
+                  borderRadius: "12px",
+                  background: "#2C3E50",
+                  color: "white",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </section>
     </Reveal>
   );

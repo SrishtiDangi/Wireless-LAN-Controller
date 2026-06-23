@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 
 function AccessPointJoin() {
+  const [selectedStep, setSelectedStep] = useState(null);
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -72,6 +73,7 @@ function AccessPointJoin() {
           {data.steps.map((step, index) => (
             <div
               key={index}
+              onClick={() => setSelectedStep(step)}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -165,6 +167,122 @@ function AccessPointJoin() {
           }
         `}
       </style>
+      {selectedStep && (
+        <div
+          onClick={() => setSelectedStep(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.55)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+            padding: "20px",
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "700px",
+              maxWidth: "95%",
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "30px",
+              border: `3px solid ${selectedStep.border}`,
+              boxShadow: "0 20px 60px rgba(0,0,0,0.25)",
+            }}
+          >
+            <h2
+              style={{
+                color: "#2C3E50",
+                marginBottom: "15px",
+              }}
+            >
+              {selectedStep.title}
+            </h2>
+
+            <p
+              style={{
+                color: "#555",
+                marginBottom: "20px",
+              }}
+            >
+              {selectedStep.desc}
+            </p>
+
+            <h3
+              style={{
+                color: "#2C3E50",
+                marginBottom: "10px",
+              }}
+            >
+              Detailed Process
+            </h3>
+
+            <ul>
+              {selectedStep.details?.map((item, i) => (
+                <li
+                  key={i}
+                  style={{
+                    marginBottom: "10px",
+                    color: "#555",
+                  }}
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <h3
+              style={{
+                color: "#2C3E50",
+                marginTop: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              Useful Commands
+            </h3>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+              }}
+            >
+              {selectedStep.commands?.map((cmd, i) => (
+                <span
+                  key={i}
+                  style={{
+                    background: "#F4F4F4",
+                    padding: "8px 12px",
+                    borderRadius: "10px",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  {cmd}
+                </span>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setSelectedStep(null)}
+              style={{
+                marginTop: "25px",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "10px",
+                background: "#2C3E50",
+                color: "#fff",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

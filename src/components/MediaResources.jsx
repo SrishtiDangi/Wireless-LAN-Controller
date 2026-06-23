@@ -1,24 +1,24 @@
 import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 import {
-  FaExchangeAlt,
-  FaUsers,
-  FaMusic,
-  FaBullhorn,
-  FaRandom,
+  FaShieldAlt,
+  FaGlobe,
+  FaServer,
+  FaDatabase,
+  FaSync
 } from "react-icons/fa";
 
 function MediaResources() {
   const [data, setData] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const iconMap = {
-    exchange: <FaExchangeAlt size={30} />,
-    users: <FaUsers size={30} />,
-    music: <FaMusic size={30} />,
-    bullhorn: <FaBullhorn size={30} />,
-    random: <FaRandom size={30} />,
+    shield: <FaShieldAlt size={30} />,
+    globe: <FaGlobe size={30} />,
+    server: <FaServer size={30} />,
+    database: <FaDatabase size={30} />,
+    sync: <FaSync size={30} />,
   };
-
   // ✅ FETCH BACKEND DATA
   useEffect(() => {
     fetch("http://localhost:5000/api/mediaResources")
@@ -86,6 +86,7 @@ function MediaResources() {
           {data.items.map((item, index) => (
             <div
               key={index}
+              onClick={() => setSelectedItem(item)}
               style={{
                 background: item.color,
                 borderRadius: "18px",
@@ -136,6 +137,77 @@ function MediaResources() {
             </div>
           ))}
         </div>
+        {selectedItem && (
+          <div
+            onClick={() => setSelectedItem(null)}
+            style={{
+              position: "fixed",
+              inset: 0,
+              background: "rgba(0,0,0,0.55)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              zIndex: 9999,
+            }}
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                width: "600px",
+                maxWidth: "92%",
+                background: "#fff",
+                borderRadius: "24px",
+                padding: "30px",
+                boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+              }}
+            >
+              <h2
+                style={{
+                  color: "#2C3E50",
+                  marginBottom: "12px",
+                }}
+              >
+                {selectedItem.title}
+              </h2>
+
+              <p
+                style={{
+                  color: "#666",
+                  marginBottom: "20px",
+                }}
+              >
+                {selectedItem.desc}
+              </p>
+
+              <ul
+                style={{
+                  lineHeight: "1.9",
+                  color: "#444",
+                  paddingLeft: "22px",
+                }}
+              >
+                {selectedItem.details?.map((detail, index) => (
+                  <li key={index}>{detail}</li>
+                ))}
+              </ul>
+
+              <button
+                onClick={() => setSelectedItem(null)}
+                style={{
+                  marginTop: "20px",
+                  padding: "10px 20px",
+                  border: "none",
+                  borderRadius: "10px",
+                  background: "#2C3E50",
+                  color: "#fff",
+                  cursor: "pointer",
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </section>
     </Reveal>
   );

@@ -5,13 +5,12 @@ function Navbar() {
 
   const links = [
     { id: "overview", label: "Overview" },
-    { id: "ecosystem", label: "Ecosystem" },
     { id: "architecture", label: "Architecture" },
-    { id: "capwap", label: "CAPWAP" },
+  
     {id: "protocols", label: "Protocols" },
-    { id: "mobility", label: "Mobility" },
+    
     { id: "media-resources", label: "Services" },
-    { id: "high-availability", label: "High Availability" },
+    
     { id: "advantages", label: "Benefits" },  
     { id: "troubleshooting", label: "Troubleshooting" },
     { id: "diagnostic-guide", label: "Diagnostic Guide" },

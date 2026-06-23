@@ -7,28 +7,59 @@
       "title": "WPA2 / WPA3 Security",
       "desc": "Encrypts wireless traffic between clients and access points to ensure confidentiality and secure communication.",
       "color": "linear-gradient(135deg,#FADBD8,#FFF5F4)",
-      "border": "#E59866"
+      "border": "#E59866",
+      "details": [
+        "Provides strong wireless encryption.",
+        "Protects data confidentiality over Wi-Fi.",
+        "WPA3 offers stronger protection than WPA2.",
+        "Prevents unauthorized packet interception.",
+        "Secures communication between clients and APs."
+      ]
     },
+
     {
       "icon": "server",
       "title": "802.1X Authentication",
       "desc": "Uses RADIUS authentication to verify users and devices before granting WLAN access.",
       "color": "linear-gradient(135deg,#D6EAF8,#EEF7FD)",
-      "border": "#85C1E9"
+      "border": "#85C1E9",
+      "details": [
+        "Authenticates users before network access.",
+        "Works with RADIUS servers.",
+        "Supports enterprise wireless security.",
+        "Validates user credentials centrally.",
+        "Prevents unauthorized device access."
+      ]
     },
+
     {
       "icon": "lock",
       "title": "AAA Integration",
       "desc": "Integrates with Cisco ISE, RADIUS, or TACACS+ servers for centralized authentication and authorization.",
       "color": "linear-gradient(135deg,#E8DFF5,#F4ECF7)",
-      "border": "#C39BD3"
+      "border": "#C39BD3",
+      "details": [
+        "Supports Authentication, Authorization and Accounting.",
+        "Integrates with Cisco ISE and RADIUS.",
+        "Provides centralized policy control.",
+        "Tracks user activity and sessions.",
+        "Improves enterprise security management."
+      ]
     },
+
     {
       "icon": "network",
       "title": "Guest Access",
       "desc": "Provides isolated internet connectivity for visitors without exposing internal enterprise resources.",
       "color": "linear-gradient(135deg,#D5F5E3,#EAFAF1)",
-      "border": "#7DCEA0"
+      "border": "#7DCEA0",
+      "details": [
+        "Provides separate guest WLAN access.",
+        "Isolates visitors from internal resources.",
+        "Supports captive portal authentication.",
+        "Improves visitor connectivity experience.",
+        "Maintains enterprise network security."
+      ]
     }
   ]
 }

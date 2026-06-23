@@ -11,10 +11,7 @@
       "id": "architecture",
       "label": "Architecture"
     },
-    {
-      "id": "capwap",
-      "label": "CAPWAP"
-    },
+
     {
       "id": "protocols",
       "label": "Protocols"
@@ -26,18 +23,6 @@
     {
       "id": "media-resources",
       "label": "Services"
-    },
-    {
-      "id": "security",
-      "label": "Security"
-    },
-    {
-      "id": "mobility",
-      "label": "Mobility"
-    },
-    {
-      "id": "high-availability",
-      "label": "High Availability"
     },
     {
       "id": "troubleshooting",

@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
 import Reveal from "./Reveal";
 import {
-  FaMobileAlt,
-  FaPhoneAlt,
-  FaUserCheck,
-  FaLaptopHouse,
+  FaWifi,
+  FaNetworkWired,
+  FaUsers,
+  FaShieldAlt,
+  FaGlobe,
 } from "react-icons/fa";
 
 function Mobility() {
   const [data, setData] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const iconMap = {
-    mobile: <FaMobileAlt size={30} />,
-    user: <FaUserCheck size={30} />,
-    phone: <FaPhoneAlt size={30} />,
-    laptop: <FaLaptopHouse size={30} />,
+    wifi: <FaWifi size={30} />,
+    network: <FaNetworkWired size={30} />,
+    group: <FaUsers size={30} />,
+    security: <FaShieldAlt size={30} />,
+    globe: <FaGlobe size={30} />,
   };
 
   // ✅ FETCH BACKEND DATA
@@ -73,6 +76,7 @@ function Mobility() {
         {data.items.map((item, index) => (
           <Reveal key={index}>
             <div
+              onClick={() => setSelectedItem(item)}
               style={{
                 background: item.color,
                 border: `2px solid ${item.border}`,
@@ -119,6 +123,77 @@ function Mobility() {
           </Reveal>
         ))}
       </div>
+      {selectedItem && (
+        <div
+          onClick={() => setSelectedItem(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.55)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              width: "600px",
+              maxWidth: "92%",
+              background: "#fff",
+              borderRadius: "24px",
+              padding: "30px",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.25)",
+            }}
+          >
+            <h2
+              style={{
+                color: "#2C3E50",
+                marginBottom: "12px",
+              }}
+            >
+              {selectedItem.title}
+            </h2>
+
+            <p
+              style={{
+                color: "#666",
+                marginBottom: "20px",
+              }}
+            >
+              {selectedItem.desc}
+            </p>
+
+            <ul
+              style={{
+                lineHeight: "1.9",
+                color: "#444",
+                paddingLeft: "22px",
+              }}
+            >
+              {selectedItem.details?.map((detail, index) => (
+                <li key={index}>{detail}</li>
+              ))}
+            </ul>
+
+            <button
+              onClick={() => setSelectedItem(null)}
+              style={{
+                marginTop: "20px",
+                padding: "10px 20px",
+                border: "none",
+                borderRadius: "10px",
+                background: "#2C3E50",
+                color: "#fff",
+                cursor: "pointer",
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
