@@ -4,7 +4,7 @@ function Footer() {
   const [footer, setFooter] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/footer")
+    fetch("https://wireless-lan-controller.onrender.com/api/footer")
       .then((res) => res.json())
       .then((data) => setFooter(data))
       .catch((err) => console.log(err));

@@ -13,7 +13,7 @@ function WorkingProcess() {
   const [data, setData] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/api/workingProcess")
+    fetch("https://wireless-lan-controller.onrender.com/api/workingProcess")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

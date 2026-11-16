@@ -21,7 +21,7 @@ function MediaResources() {
   };
   // ✅ FETCH BACKEND DATA
   useEffect(() => {
-    fetch("http://localhost:5000/api/mediaResources")
+    fetch("https://wireless-lan-controller.onrender.com/api/mediaResources")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

@@ -7,7 +7,7 @@ function Protocols() {
   const [selectedProtocol, setSelectedProtocol] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/protocols")
+    fetch("https://wireless-lan-controller.onrender.com/api/protocols")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

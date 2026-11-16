@@ -14,7 +14,7 @@ function AccessPointJoin() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/apJoin")
+    fetch("https://wireless-lan-controller.onrender.com/api/apJoin")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

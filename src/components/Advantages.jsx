@@ -14,7 +14,7 @@ function Advantages() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/advantages")
+    fetch("https://wireless-lan-controller.onrender.com/api/advantages")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

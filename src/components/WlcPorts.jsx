@@ -13,7 +13,7 @@ function WLCPorts() {
   const [data, setData] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/api/wlcPorts")
+    fetch("https://wireless-lan-controller.onrender.com/api/wlcPorts")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

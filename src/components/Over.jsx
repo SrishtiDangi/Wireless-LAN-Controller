@@ -5,7 +5,7 @@ function Over() {
   const [overview, setOverview] = useState(null);
   const [selectedPoint, setSelectedPoint] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/api/over")
+    fetch("https://wireless-lan-controller.onrender.com/api/over")
       .then((res) => res.json())
       .then((data) => setOverview(data))
       .catch((err) => console.log(err));

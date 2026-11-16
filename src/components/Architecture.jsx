@@ -7,7 +7,7 @@ function Architecture() {
   const [selectedDevice, setSelectedDevice] = useState(null);
   const [showController, setShowController] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/api/architecture")
+    fetch("https://wireless-lan-controller.onrender.com/api/architecture")
       .then((res) => res.json())
       .then((data) => {
         console.log("ARCHITECTURE DATA:", data);

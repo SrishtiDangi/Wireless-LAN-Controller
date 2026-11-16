@@ -43,7 +43,7 @@ function Ecosystem() {
   const [ecosystem, setEcosystem] = useState(null);
   const [selectedNode, setSelectedNode] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/api/ecosystem")
+    fetch("https://wireless-lan-controller.onrender.com/api/ecosystem")
       .then((res) => res.json())
       .then((data) => setEcosystem(data))
       .catch((err) => console.log(err));

@@ -130,7 +130,7 @@ function FlowCard({
 function DiagnosticFieldGuide() {
   const [guide, setGuide] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/api/diagnosticFieldGuide")
+    fetch("https://wireless-lan-controller.onrender.com/api/diagnosticFieldGuide")
       .then((res) => res.json())
       .then((data) => setGuide(data))
       .catch((err) => console.log(err));

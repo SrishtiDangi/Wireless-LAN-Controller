@@ -22,7 +22,7 @@ function HighAvailability() {
 
   // ✅ FETCH BACKEND DATA
   useEffect(() => {
-    fetch("http://localhost:5000/api/highAvailability")
+    fetch("https://wireless-lan-controller.onrender.com/api/highAvailability")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));

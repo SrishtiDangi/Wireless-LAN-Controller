@@ -14,7 +14,7 @@ function RackComparison() {
   const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/rack")
+    fetch("https://wireless-lan-controller.onrender.com/api/rack")
       .then((res) => res.json())
       .then((data) => setRackData(data))
       .catch((err) => console.log(err));

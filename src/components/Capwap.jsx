@@ -12,7 +12,7 @@ function CAPWAP() {
   const [data, setData] = useState(null);
   const [selectedStep, setSelectedStep] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:5000/api/capwap")
+    fetch("https://wireless-lan-controller.onrender.com/api/capwap")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((err) => console.log(err));
